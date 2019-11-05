@@ -1,0 +1,48 @@
+﻿@using  Heavy.Models;
+@model UserAddModel;
+@{
+    ViewBag.Title = "添加用户";
+}
+
+<form method="post">
+    <div class="form-group row">
+        <label asp-for="UserName" class="col-sm-2"></label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="UserName">
+            <span class="invalid" asp-validation-for="UserName"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Email" class="col-sm-2"></label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="Email">
+            <span class="invalid" asp-validation-for="Email"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Password" class="col-sm-2"></label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="Password">
+            <span class="invalid" asp-validation-for="Password"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="IDCard" class="col-sm-2"></label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="IDCard">
+            <span class="invalid" asp-validation-for="IDCard"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Url" class="col-sm-2"></label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="Url">
+            <span class="invalid" asp-validation-for="Url"></span>
+        </div>
+    </div>
+
+    <div class="invalid" asp-validation-summary="ModelOnly">
+    </div>
+    <button type="submit" class="btn btn-primary">提交</button>
+    <a asp-action="Index" class="btn btn-secondary">返回列表</a>
+</form>

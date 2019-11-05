@@ -1,0 +1,660 @@
+2019-11-04 20:21:37.031 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-11-04 20:21:39.651 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:21:40.509 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:21:40.697 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:21:40.703 +08:00 [INF] logger
+2019-11-04 20:21:40.709 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.481ms.
+2019-11-04 20:21:40.752 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:21:41.848 +08:00 [INF] Executed ViewResult - view Index executed in 1122.9518ms.
+2019-11-04 20:21:41.948 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/jquery/dist/jquery.js  
+2019-11-04 20:21:41.950 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:21:41.964 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/jquery-validation/dist/jquery.validate.js  
+2019-11-04 20:21:41.965 +08:00 [INF] Request finished in 14.0729ms 404 
+2019-11-04 20:21:41.966 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+2019-11-04 20:21:41.970 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/css/site.css  
+2019-11-04 20:21:42.005 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 1494.5879ms
+2019-11-04 20:21:42.050 +08:00 [INF] Request finished in 2403.9797ms 200 text/html; charset=utf-8
+2019-11-04 20:21:42.055 +08:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\css\site.css'
+2019-11-04 20:21:42.055 +08:00 [INF] Request finished in 85.0382ms 200 text/css
+2019-11-04 20:21:42.055 +08:00 [INF] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\lib\jquery-validation\dist\jquery.validate.js'
+2019-11-04 20:21:42.055 +08:00 [INF] Request finished in 90.6495ms 200 application/javascript
+2019-11-04 20:21:42.059 +08:00 [INF] Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js'
+2019-11-04 20:21:42.059 +08:00 [INF] Request finished in 93.3778ms 200 application/javascript
+2019-11-04 20:21:42.062 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2019-11-04 20:21:42.063 +08:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\js\site.js'
+2019-11-04 20:21:42.063 +08:00 [INF] Request finished in 0.8937ms 200 application/javascript
+2019-11-04 20:21:42.255 +08:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\lib\jquery\dist\jquery.js'
+2019-11-04 20:21:42.255 +08:00 [INF] Request finished in 307.5441ms 200 application/javascript
+2019-11-04 20:21:43.504 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:21:43.504 +08:00 [INF] Request finished in 0.4102ms 404 
+2019-11-04 20:21:43.626 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:21:43.635 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:21:43.636 +08:00 [INF] Request finished in 9.513ms 200 image/x-icon
+2019-11-04 20:22:13.678 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/User  
+2019-11-04 20:22:13.694 +08:00 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Heavy.Controllers.UserController (Heavy).
+2019-11-04 20:22:13.729 +08:00 [INF] Executing action method Heavy.Controllers.UserController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:22:14.140 +08:00 [INF] Entity Framework Core 2.1.11-servicing-32099 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: None
+2019-11-04 20:22:14.906 +08:00 [INF] Executed DbCommand (65ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`IDCard`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`Url`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+2019-11-04 20:22:15.018 +08:00 [INF] Executed action method Heavy.Controllers.UserController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1288.8595ms.
+2019-11-04 20:22:15.039 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:22:15.488 +08:00 [INF] Executed ViewResult - view Index executed in 462.872ms.
+2019-11-04 20:22:15.488 +08:00 [INF] Executed action Heavy.Controllers.UserController.Index (Heavy) in 1794.0845000000002ms
+2019-11-04 20:22:15.490 +08:00 [INF] Request finished in 1811.6011ms 200 text/html; charset=utf-8
+2019-11-04 20:22:15.510 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:22:15.522 +08:00 [INF] Request finished in 12.6456ms 404 
+2019-11-04 20:22:15.613 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:22:15.614 +08:00 [INF] Request finished in 0.3551ms 404 
+2019-11-04 20:22:17.596 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/User/Edit/d9ab507c-36c5-4d02-870f-21df36d068fa  
+2019-11-04 20:22:17.626 +08:00 [INF] Route matched with {action = "Edit", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Edit(System.String) on controller Heavy.Controllers.UserController (Heavy).
+2019-11-04 20:22:17.677 +08:00 [INF] Executing action method Heavy.Controllers.UserController.Edit (Heavy) - Validation state: "Valid"
+2019-11-04 20:22:17.680 +08:00 [INF] Entity Framework Core 2.1.11-servicing-32099 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: None
+2019-11-04 20:22:17.920 +08:00 [INF] Executed DbCommand (50ms) [Parameters=[@__get_Item_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`Id`, `e`.`AccessFailedCount`, `e`.`ConcurrencyStamp`, `e`.`Email`, `e`.`EmailConfirmed`, `e`.`IDCard`, `e`.`LockoutEnabled`, `e`.`LockoutEnd`, `e`.`NormalizedEmail`, `e`.`NormalizedUserName`, `e`.`PasswordHash`, `e`.`PhoneNumber`, `e`.`PhoneNumberConfirmed`, `e`.`SecurityStamp`, `e`.`TwoFactorEnabled`, `e`.`Url`, `e`.`UserName`
+FROM `AspNetUsers` AS `e`
+WHERE `e`.`Id` = @__get_Item_0
+LIMIT 1
+2019-11-04 20:22:18.079 +08:00 [INF] Executed DbCommand (30ms) [Parameters=[@__user_Id_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT `uc`.`Id`, `uc`.`ClaimType`, `uc`.`ClaimValue`, `uc`.`UserId`
+FROM `AspNetUserClaims` AS `uc`
+WHERE `uc`.`UserId` = @__user_Id_0
+2019-11-04 20:22:18.103 +08:00 [INF] Executed action method Heavy.Controllers.UserController.Edit (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 426.1943ms.
+2019-11-04 20:22:18.106 +08:00 [INF] Executing ViewResult, running view Edit.
+2019-11-04 20:22:18.201 +08:00 [INF] Executed ViewResult - view Edit executed in 97.458300000000008ms.
+2019-11-04 20:22:18.201 +08:00 [INF] Executed action Heavy.Controllers.UserController.Edit (Heavy) in 575.2386ms
+2019-11-04 20:22:18.202 +08:00 [INF] Request finished in 605.301ms 200 text/html; charset=utf-8
+2019-11-04 20:22:18.246 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:22:18.247 +08:00 [INF] Request finished in 0.6957ms 404 
+2019-11-04 20:22:18.368 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:22:18.368 +08:00 [INF] Request finished in 0.3912ms 404 
+2019-11-04 20:22:21.125 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/User  
+2019-11-04 20:22:21.125 +08:00 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Heavy.Controllers.UserController (Heavy).
+2019-11-04 20:22:21.157 +08:00 [INF] Executing action method Heavy.Controllers.UserController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:22:21.157 +08:00 [INF] Executed action method Heavy.Controllers.UserController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0347ms.
+2019-11-04 20:22:21.158 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:22:21.161 +08:00 [INF] Executed ViewResult - view Index executed in 2.45ms.
+2019-11-04 20:22:21.161 +08:00 [INF] Executed action Heavy.Controllers.UserController.Index (Heavy) in 35.7064ms
+2019-11-04 20:22:21.161 +08:00 [INF] Request finished in 36.3591ms 200 text/html; charset=utf-8
+2019-11-04 20:22:21.197 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:22:21.198 +08:00 [INF] Request finished in 1.7404ms 404 
+2019-11-04 20:22:21.334 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:22:21.335 +08:00 [INF] Request finished in 0.4432ms 404 
+2019-11-04 20:22:22.355 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/User/AddUser  
+2019-11-04 20:22:22.356 +08:00 [INF] Route matched with {action = "AddUser", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddUser() on controller Heavy.Controllers.UserController (Heavy).
+2019-11-04 20:22:22.382 +08:00 [INF] Executing action method Heavy.Controllers.UserController.AddUser (Heavy) - Validation state: "Valid"
+2019-11-04 20:22:22.383 +08:00 [INF] Executed action method Heavy.Controllers.UserController.AddUser (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3435ms.
+2019-11-04 20:22:22.386 +08:00 [INF] Executing ViewResult, running view AddUser.
+2019-11-04 20:22:22.433 +08:00 [INF] Executed ViewResult - view AddUser executed in 50.590700000000005ms.
+2019-11-04 20:22:22.434 +08:00 [INF] Executed action Heavy.Controllers.UserController.AddUser (Heavy) in 77.243900000000011ms
+2019-11-04 20:22:22.434 +08:00 [INF] Request finished in 79.1601ms 200 text/html; charset=utf-8
+2019-11-04 20:22:22.458 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:22:22.458 +08:00 [INF] Request finished in 0.4448ms 404 
+2019-11-04 20:22:22.597 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:22:22.598 +08:00 [INF] Request finished in 0.3296ms 404 
+2019-11-04 20:22:24.660 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/Role  
+2019-11-04 20:22:24.664 +08:00 [INF] Route matched with {action = "Index", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Heavy.Controllers.RoleController (Heavy).
+2019-11-04 20:22:24.680 +08:00 [INF] Authorization failed.
+2019-11-04 20:22:24.680 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2019-11-04 20:22:24.686 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2019-11-04 20:22:24.693 +08:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-11-04 20:22:24.693 +08:00 [INF] Executed action Heavy.Controllers.RoleController.Index (Heavy) in 29.6228ms
+2019-11-04 20:22:24.694 +08:00 [INF] Request finished in 33.762ms 302 
+2019-11-04 20:22:24.697 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/Account/Login?ReturnUrl=%2FRole  
+2019-11-04 20:22:24.699 +08:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller Heavy.Controllers.AccountController (Heavy).
+2019-11-04 20:22:24.723 +08:00 [INF] Executing action method Heavy.Controllers.AccountController.Login (Heavy) - Validation state: "Valid"
+2019-11-04 20:22:24.723 +08:00 [INF] Executed action method Heavy.Controllers.AccountController.Login (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3332ms.
+2019-11-04 20:22:24.728 +08:00 [INF] Executing ViewResult, running view Login.
+2019-11-04 20:22:24.748 +08:00 [INF] Executed ViewResult - view Login executed in 24.994ms.
+2019-11-04 20:22:24.748 +08:00 [INF] Executed action Heavy.Controllers.AccountController.Login (Heavy) in 49.753800000000005ms
+2019-11-04 20:22:24.749 +08:00 [INF] Request finished in 51.7335ms 200 text/html; charset=utf-8
+2019-11-04 20:22:24.806 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:22:24.808 +08:00 [INF] Request finished in 2.4825ms 404 
+2019-11-04 20:22:24.849 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:22:24.849 +08:00 [INF] Request finished in 0.4111ms 404 
+2019-11-04 20:22:25.491 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:22:25.491 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:26:16.122 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-11-04 20:26:16.962 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:26:17.240 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:26:17.252 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:26:17.256 +08:00 [INF] logger
+2019-11-04 20:26:17.260 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.76ms.
+2019-11-04 20:26:17.286 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:26:17.650 +08:00 [INF] Executed ViewResult - view Index executed in 380.41740000000004ms.
+2019-11-04 20:26:17.685 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 445.1127ms
+2019-11-04 20:26:17.696 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:26:17.709 +08:00 [INF] Request finished in 12.5822ms 404 
+2019-11-04 20:26:17.712 +08:00 [INF] Request finished in 754.4851ms 200 text/html; charset=utf-8
+2019-11-04 20:26:17.895 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:26:17.896 +08:00 [INF] Request finished in 0.5036ms 404 
+2019-11-04 20:26:35.813 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:26:35.814 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:26:35.814 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:26:35.814 +08:00 [INF] logger
+2019-11-04 20:26:35.814 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0665ms.
+2019-11-04 20:26:35.815 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:26:37.696 +08:00 [INF] Executed ViewResult - view Index executed in 1880.8118000000002ms.
+2019-11-04 20:26:37.696 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 1881.8344000000002ms
+2019-11-04 20:26:37.696 +08:00 [INF] Request finished in 1882.7803ms 200 text/html; charset=utf-8
+2019-11-04 20:26:37.713 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:26:37.714 +08:00 [INF] Request finished in 0.4606ms 404 
+2019-11-04 20:26:37.764 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:26:37.764 +08:00 [INF] Request finished in 0.3003ms 404 
+2019-11-04 20:26:37.832 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:26:37.839 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:26:37.839 +08:00 [INF] Request finished in 7.0748ms 200 image/x-icon
+2019-11-04 20:27:22.799 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:27:22.799 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:27:22.799 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:27:22.799 +08:00 [INF] logger
+2019-11-04 20:27:22.799 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0367ms.
+2019-11-04 20:27:22.800 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:27:23.045 +08:00 [INF] Executed ViewResult - view Index executed in 245.32940000000002ms.
+2019-11-04 20:27:23.045 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 245.97590000000002ms
+2019-11-04 20:27:23.045 +08:00 [INF] Request finished in 246.4891ms 200 text/html; charset=utf-8
+2019-11-04 20:27:23.071 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:27:23.072 +08:00 [INF] Request finished in 0.9778ms 404 
+2019-11-04 20:27:23.201 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:27:23.213 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:27:23.213 +08:00 [INF] Request finished in 12.0615ms 200 image/x-icon
+2019-11-04 20:28:13.254 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-11-04 20:28:16.960 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:28:17.099 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:28:17.111 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:28:17.117 +08:00 [INF] logger
+2019-11-04 20:28:17.120 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.801ms.
+2019-11-04 20:28:17.147 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:28:17.504 +08:00 [INF] Executed ViewResult - view Index executed in 373.7551ms.
+2019-11-04 20:28:17.522 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 423.1813ms
+2019-11-04 20:28:17.541 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:28:17.559 +08:00 [INF] Request finished in 18.2732ms 404 
+2019-11-04 20:28:17.562 +08:00 [INF] Request finished in 604.3645ms 200 text/html; charset=utf-8
+2019-11-04 20:28:17.585 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:28:17.585 +08:00 [INF] Request finished in 0.4595ms 404 
+2019-11-04 20:28:17.665 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:28:17.674 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:28:17.674 +08:00 [INF] Request finished in 8.4675ms 200 image/x-icon
+2019-11-04 20:28:19.110 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:28:19.111 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:28:19.111 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:28:19.111 +08:00 [INF] logger
+2019-11-04 20:28:19.111 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1159ms.
+2019-11-04 20:28:19.112 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:28:19.118 +08:00 [INF] Executed ViewResult - view Index executed in 6.5265ms.
+2019-11-04 20:28:19.118 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 7.5021ms
+2019-11-04 20:28:19.118 +08:00 [INF] Request finished in 8.2687ms 200 text/html; charset=utf-8
+2019-11-04 20:28:19.165 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:28:19.167 +08:00 [INF] Request finished in 2.0194ms 404 
+2019-11-04 20:28:19.199 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:28:19.199 +08:00 [INF] Request finished in 0.4402ms 404 
+2019-11-04 20:28:19.298 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:28:19.304 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:28:19.305 +08:00 [INF] Request finished in 6.2279ms 200 image/x-icon
+2019-11-04 20:31:25.989 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:31:25.989 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:31:25.990 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:31:25.990 +08:00 [INF] logger
+2019-11-04 20:31:25.990 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.056100000000000004ms.
+2019-11-04 20:31:25.990 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:31:26.795 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 805.7399ms
+2019-11-04 20:31:26.796 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Mvc.Razor.Compilation.CompilationFailedException: One or more compilation failures occurred:
+D:\net core\FIrstDemo\Heavy\Views\Shared\_LoginPartial.cshtml(23,1): Error RZ1006: The else block is missing a closing "}" character.  Make sure you have a matching "}" character for all the "{" characters within this block, and that none of the "}" characters are being interpreted as markup.
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.CompileAndEmit(String relativePath)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler.OnCacheMiss(String normalizedPath)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRazorPageFactoryProvider.CreateFactory(String relativePath)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.CreateCacheResult(HashSet`1 expirationTokens, String relativePath, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.OnCacheMiss(ViewLocationExpanderContext expanderContext, ViewLocationCacheKey cacheKey)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.LocatePageFromViewLocations(ActionContext actionContext, String pageName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.FindView(ActionContext context, String viewName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.ViewEngines.CompositeViewEngine.FindView(ActionContext context, String viewName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper.RenderPartialViewAsync(TextWriter writer, Object model)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.RunAsync(TagHelperExecutionContext executionContext)
+   at AspNetCore.Views_Shared__Layout.<ExecuteAsync>b__53_1()
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCore.Views_Shared__Layout.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-11-04 20:31:26.914 +08:00 [INF] Request finished in 925.1802ms 500 text/html; charset=utf-8
+2019-11-04 20:31:27.332 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:31:27.333 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:31:27.333 +08:00 [INF] Request finished in 1.1551ms 200 image/x-icon
+2019-11-04 20:31:34.756 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:31:34.757 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:31:34.757 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:31:34.757 +08:00 [INF] logger
+2019-11-04 20:31:34.757 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.045700000000000005ms.
+2019-11-04 20:31:34.758 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:31:35.970 +08:00 [INF] Executed ViewResult - view Index executed in 1212.0568ms.
+2019-11-04 20:31:35.970 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 1213.5074ms
+2019-11-04 20:31:35.970 +08:00 [INF] Request finished in 1214.0853ms 200 text/html; charset=utf-8
+2019-11-04 20:31:36.036 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:31:36.036 +08:00 [INF] Request finished in 0.3946ms 404 
+2019-11-04 20:31:36.218 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:31:36.219 +08:00 [INF] Request finished in 0.6596ms 404 
+2019-11-04 20:31:36.312 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:31:36.313 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:31:36.313 +08:00 [INF] Request finished in 1.087ms 200 image/x-icon
+2019-11-04 20:31:47.192 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:31:47.192 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:31:47.193 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:31:47.193 +08:00 [INF] logger
+2019-11-04 20:31:47.193 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.24860000000000002ms.
+2019-11-04 20:31:47.194 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:31:47.448 +08:00 [INF] Executed ViewResult - view Index executed in 254.38830000000002ms.
+2019-11-04 20:31:47.448 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 255.95690000000002ms
+2019-11-04 20:31:47.448 +08:00 [INF] Request finished in 256.7483ms 200 text/html; charset=utf-8
+2019-11-04 20:31:47.499 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:31:47.500 +08:00 [INF] Request finished in 0.749ms 404 
+2019-11-04 20:31:47.598 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:31:47.598 +08:00 [INF] Request finished in 0.3352ms 404 
+2019-11-04 20:31:47.737 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:31:47.739 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:31:47.739 +08:00 [INF] Request finished in 1.7664ms 200 image/x-icon
+2019-11-04 20:31:59.168 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:31:59.169 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:31:59.169 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:31:59.169 +08:00 [INF] logger
+2019-11-04 20:31:59.169 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1039ms.
+2019-11-04 20:31:59.169 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:31:59.450 +08:00 [INF] Executed ViewResult - view Index executed in 280.75010000000003ms.
+2019-11-04 20:31:59.450 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 281.6178ms
+2019-11-04 20:31:59.450 +08:00 [INF] Request finished in 282.6683ms 200 text/html; charset=utf-8
+2019-11-04 20:31:59.504 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:31:59.506 +08:00 [INF] Request finished in 3.1379ms 404 
+2019-11-04 20:31:59.596 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:31:59.597 +08:00 [INF] Request finished in 0.586ms 404 
+2019-11-04 20:31:59.796 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:31:59.799 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:31:59.799 +08:00 [INF] Request finished in 3.6287ms 200 image/x-icon
+2019-11-04 20:32:22.673 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:32:22.673 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:32:22.674 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:32:22.674 +08:00 [INF] logger
+2019-11-04 20:32:22.674 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.062800000000000009ms.
+2019-11-04 20:32:22.674 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:32:22.941 +08:00 [INF] Executed ViewResult - view Index executed in 266.7268ms.
+2019-11-04 20:32:22.941 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 267.7213ms
+2019-11-04 20:32:22.941 +08:00 [INF] Request finished in 268.4329ms 200 text/html; charset=utf-8
+2019-11-04 20:32:23.008 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:32:23.008 +08:00 [INF] Request finished in 0.5535ms 404 
+2019-11-04 20:32:23.101 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:32:23.102 +08:00 [INF] Request finished in 0.4139ms 404 
+2019-11-04 20:32:23.400 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:32:23.402 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:32:23.402 +08:00 [INF] Request finished in 1.8736ms 200 image/x-icon
+2019-11-04 20:32:29.294 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:32:29.294 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:32:29.294 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:32:29.294 +08:00 [INF] logger
+2019-11-04 20:32:29.294 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0368ms.
+2019-11-04 20:32:29.295 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:32:29.504 +08:00 [INF] Executed ViewResult - view Index executed in 209.46810000000002ms.
+2019-11-04 20:32:29.504 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 210.0773ms
+2019-11-04 20:32:29.504 +08:00 [INF] Request finished in 210.5433ms 200 text/html; charset=utf-8
+2019-11-04 20:32:29.541 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:32:29.541 +08:00 [INF] Request finished in 0.4382ms 404 
+2019-11-04 20:32:29.651 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:32:29.651 +08:00 [INF] Request finished in 0.4004ms 404 
+2019-11-04 20:32:29.861 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:32:29.862 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:32:29.862 +08:00 [INF] Request finished in 1.2363ms 200 image/x-icon
+2019-11-04 20:32:36.559 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:32:36.559 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:32:36.559 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:32:36.559 +08:00 [INF] logger
+2019-11-04 20:32:36.559 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0352ms.
+2019-11-04 20:32:36.559 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:32:36.808 +08:00 [INF] Executed ViewResult - view Index executed in 248.7375ms.
+2019-11-04 20:32:36.808 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 249.299ms
+2019-11-04 20:32:36.808 +08:00 [INF] Request finished in 249.7832ms 200 text/html; charset=utf-8
+2019-11-04 20:32:36.870 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:32:36.870 +08:00 [INF] Request finished in 0.4766ms 404 
+2019-11-04 20:32:36.964 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:32:36.964 +08:00 [INF] Request finished in 0.4283ms 404 
+2019-11-04 20:32:37.176 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:32:37.177 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:32:37.177 +08:00 [INF] Request finished in 0.7869ms 200 image/x-icon
+2019-11-04 20:32:55.430 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:32:55.431 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:32:55.431 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:32:55.431 +08:00 [INF] logger
+2019-11-04 20:32:55.431 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1267ms.
+2019-11-04 20:32:55.432 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:32:55.729 +08:00 [INF] Executed ViewResult - view Index executed in 297.1689ms.
+2019-11-04 20:32:55.729 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 298.1658ms
+2019-11-04 20:32:55.729 +08:00 [INF] Request finished in 299.2588ms 200 text/html; charset=utf-8
+2019-11-04 20:32:55.787 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:32:55.787 +08:00 [INF] Request finished in 0.4611ms 404 
+2019-11-04 20:32:55.882 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:32:55.883 +08:00 [INF] Request finished in 0.3944ms 404 
+2019-11-04 20:32:56.098 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:32:56.099 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:32:56.099 +08:00 [INF] Request finished in 0.6961ms 200 image/x-icon
+2019-11-04 20:33:01.407 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:33:01.407 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:33:01.408 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:33:01.408 +08:00 [INF] logger
+2019-11-04 20:33:01.408 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.056ms.
+2019-11-04 20:33:01.411 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:33:01.646 +08:00 [INF] Executed ViewResult - view Index executed in 235.2692ms.
+2019-11-04 20:33:01.646 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 238.8485ms
+2019-11-04 20:33:01.646 +08:00 [INF] Request finished in 239.7208ms 200 text/html; charset=utf-8
+2019-11-04 20:33:01.684 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:33:01.688 +08:00 [INF] Request finished in 3.7397ms 404 
+2019-11-04 20:33:01.778 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:33:01.778 +08:00 [INF] Request finished in 0.4013ms 404 
+2019-11-04 20:33:01.986 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:33:01.986 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:33:01.986 +08:00 [INF] Request finished in 1.0621ms 200 image/x-icon
+2019-11-04 20:33:13.679 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:33:13.679 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:33:13.680 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:33:13.680 +08:00 [INF] logger
+2019-11-04 20:33:13.680 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0424ms.
+2019-11-04 20:33:13.680 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:33:13.940 +08:00 [INF] Executed ViewResult - view Index executed in 260.4742ms.
+2019-11-04 20:33:13.940 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 261.07210000000003ms
+2019-11-04 20:33:13.941 +08:00 [INF] Request finished in 261.4722ms 200 text/html; charset=utf-8
+2019-11-04 20:33:13.995 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:33:13.998 +08:00 [INF] Request finished in 3.4813ms 404 
+2019-11-04 20:33:14.102 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:33:14.103 +08:00 [INF] Request finished in 0.3941ms 404 
+2019-11-04 20:33:14.417 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:33:14.418 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:33:14.418 +08:00 [INF] Request finished in 1.0629ms 200 image/x-icon
+2019-11-04 20:33:25.507 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:33:25.507 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:33:25.510 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:33:25.510 +08:00 [INF] logger
+2019-11-04 20:33:25.510 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0838ms.
+2019-11-04 20:33:25.510 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:33:25.820 +08:00 [INF] Executed ViewResult - view Index executed in 310.00350000000003ms.
+2019-11-04 20:33:25.820 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 313.06940000000003ms
+2019-11-04 20:33:25.820 +08:00 [INF] Request finished in 313.8324ms 200 text/html; charset=utf-8
+2019-11-04 20:33:25.881 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:33:25.882 +08:00 [INF] Request finished in 0.461ms 404 
+2019-11-04 20:33:25.972 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:33:25.972 +08:00 [INF] Request finished in 0.8029ms 404 
+2019-11-04 20:33:26.200 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:33:26.200 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:33:26.200 +08:00 [INF] Request finished in 0.705ms 200 image/x-icon
+2019-11-04 20:33:30.162 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:33:30.162 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:33:30.173 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:33:30.173 +08:00 [INF] logger
+2019-11-04 20:33:30.173 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.056900000000000006ms.
+2019-11-04 20:33:30.182 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:33:30.184 +08:00 [INF] Executed ViewResult - view Index executed in 1.4975ms.
+2019-11-04 20:33:30.184 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 21.401400000000002ms
+2019-11-04 20:33:30.184 +08:00 [INF] Request finished in 21.9748ms 200 text/html; charset=utf-8
+2019-11-04 20:33:30.243 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:33:30.244 +08:00 [INF] Request finished in 1.1243ms 404 
+2019-11-04 20:33:30.302 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:33:30.303 +08:00 [INF] Request finished in 0.38ms 404 
+2019-11-04 20:33:30.399 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:33:30.400 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:33:30.400 +08:00 [INF] Request finished in 0.6209ms 200 image/x-icon
+2019-11-04 20:33:34.676 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:33:34.676 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:33:34.676 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:33:34.676 +08:00 [INF] logger
+2019-11-04 20:33:34.676 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0368ms.
+2019-11-04 20:33:34.677 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:33:34.839 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:33:34.839 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:33:34.839 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:33:34.839 +08:00 [INF] logger
+2019-11-04 20:33:34.839 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0476ms.
+2019-11-04 20:33:34.839 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:33:34.962 +08:00 [INF] Executed ViewResult - view Index executed in 285.66720000000004ms.
+2019-11-04 20:33:34.962 +08:00 [INF] Executed ViewResult - view Index executed in 122.7968ms.
+2019-11-04 20:33:34.962 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 286.274ms
+2019-11-04 20:33:34.962 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 123.3365ms
+2019-11-04 20:33:34.962 +08:00 [INF] Request finished in 286.6725ms 200 text/html; charset=utf-8
+2019-11-04 20:33:34.962 +08:00 [INF] Request finished in 123.8072ms 200 text/html; charset=utf-8
+2019-11-04 20:33:34.993 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:33:34.996 +08:00 [INF] Request finished in 2.8708ms 404 
+2019-11-04 20:33:35.036 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:33:35.037 +08:00 [INF] Request finished in 0.5979ms 404 
+2019-11-04 20:38:23.230 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-11-04 20:38:23.946 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/  
+2019-11-04 20:38:23.946 +08:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:55326/  0
+2019-11-04 20:38:24.012 +08:00 [INF] Request finished in 66.315ms 200 
+2019-11-04 20:38:24.255 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:38:24.360 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:38:24.366 +08:00 [INF] logger
+2019-11-04 20:38:24.372 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.6904000000000001ms.
+2019-11-04 20:38:24.416 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:38:25.123 +08:00 [INF] Executed ViewResult - view Index executed in 738.19400000000007ms.
+2019-11-04 20:38:25.163 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 907.63ms
+2019-11-04 20:38:25.215 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/jquery-validation/dist/jquery.validate.js  
+2019-11-04 20:38:25.218 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:25.222 +08:00 [INF] Request finished in 4.6985ms 404 
+2019-11-04 20:38:25.225 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+2019-11-04 20:38:25.226 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2019-11-04 20:38:25.235 +08:00 [INF] Request finished in 1291.9848ms 200 text/html; charset=utf-8
+2019-11-04 20:38:25.236 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/jquery/dist/jquery.js  
+2019-11-04 20:38:25.236 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/css/site.css  
+2019-11-04 20:38:25.304 +08:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'D:\net core\FIrstDemo\用户管理\wwwroot\css\site.css'
+2019-11-04 20:38:25.305 +08:00 [INF] Request finished in 68.7334ms 200 text/css
+2019-11-04 20:38:25.306 +08:00 [INF] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'D:\net core\FIrstDemo\用户管理\wwwroot\lib\jquery-validation\dist\jquery.validate.js'
+2019-11-04 20:38:25.306 +08:00 [INF] Request finished in 90.9456ms 200 application/javascript
+2019-11-04 20:38:25.307 +08:00 [INF] Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'D:\net core\FIrstDemo\用户管理\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js'
+2019-11-04 20:38:25.307 +08:00 [INF] Request finished in 82.0299ms 200 application/javascript
+2019-11-04 20:38:25.308 +08:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'D:\net core\FIrstDemo\用户管理\wwwroot\js\site.js'
+2019-11-04 20:38:25.308 +08:00 [INF] Request finished in 82.0933ms 200 application/javascript
+2019-11-04 20:38:25.351 +08:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'D:\net core\FIrstDemo\用户管理\wwwroot\lib\jquery\dist\jquery.js'
+2019-11-04 20:38:25.351 +08:00 [INF] Request finished in 115.4053ms 200 application/javascript
+2019-11-04 20:38:25.596 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:25.596 +08:00 [INF] Request finished in 0.6837ms 404 
+2019-11-04 20:38:25.682 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/favicon.ico  
+2019-11-04 20:38:25.684 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\用户管理\wwwroot\favicon.ico'
+2019-11-04 20:38:25.684 +08:00 [INF] Request finished in 1.8702ms 200 image/x-icon
+2019-11-04 20:38:31.838 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/Role  
+2019-11-04 20:38:31.844 +08:00 [INF] Route matched with {action = "Index", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Heavy.Controllers.RoleController (Heavy).
+2019-11-04 20:38:31.860 +08:00 [INF] Authorization failed.
+2019-11-04 20:38:31.860 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2019-11-04 20:38:31.866 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2019-11-04 20:38:31.873 +08:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-11-04 20:38:31.873 +08:00 [INF] Executed action Heavy.Controllers.RoleController.Index (Heavy) in 28.7405ms
+2019-11-04 20:38:31.873 +08:00 [INF] Request finished in 35.3557ms 302 
+2019-11-04 20:38:31.880 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/Account/Login?ReturnUrl=%2FRole  
+2019-11-04 20:38:31.889 +08:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller Heavy.Controllers.AccountController (Heavy).
+2019-11-04 20:38:31.917 +08:00 [INF] Executing action method Heavy.Controllers.AccountController.Login (Heavy) - Validation state: "Valid"
+2019-11-04 20:38:31.918 +08:00 [INF] Executed action method Heavy.Controllers.AccountController.Login (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.4058ms.
+2019-11-04 20:38:31.921 +08:00 [INF] Executing ViewResult, running view Login.
+2019-11-04 20:38:31.982 +08:00 [INF] Executed ViewResult - view Login executed in 64.1281ms.
+2019-11-04 20:38:31.982 +08:00 [INF] Executed action Heavy.Controllers.AccountController.Login (Heavy) in 93.3773ms
+2019-11-04 20:38:31.982 +08:00 [INF] Request finished in 102.4537ms 200 text/html; charset=utf-8
+2019-11-04 20:38:32.040 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:32.040 +08:00 [INF] Request finished in 0.6245ms 404 
+2019-11-04 20:38:32.102 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:32.103 +08:00 [INF] Request finished in 0.4556ms 404 
+2019-11-04 20:38:32.518 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/User  
+2019-11-04 20:38:32.522 +08:00 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Heavy.Controllers.UserController (Heavy).
+2019-11-04 20:38:32.558 +08:00 [INF] Executing action method Heavy.Controllers.UserController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:38:32.884 +08:00 [INF] Entity Framework Core 2.1.11-servicing-32099 initialized 'ApplicationDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: None
+2019-11-04 20:38:33.602 +08:00 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `a`.`Id`, `a`.`AccessFailedCount`, `a`.`ConcurrencyStamp`, `a`.`Email`, `a`.`EmailConfirmed`, `a`.`IDCard`, `a`.`LockoutEnabled`, `a`.`LockoutEnd`, `a`.`NormalizedEmail`, `a`.`NormalizedUserName`, `a`.`PasswordHash`, `a`.`PhoneNumber`, `a`.`PhoneNumberConfirmed`, `a`.`SecurityStamp`, `a`.`TwoFactorEnabled`, `a`.`Url`, `a`.`UserName`
+FROM `AspNetUsers` AS `a`
+2019-11-04 20:38:33.712 +08:00 [INF] Executed action method Heavy.Controllers.UserController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1152.9872ms.
+2019-11-04 20:38:33.719 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:38:33.860 +08:00 [INF] Executed ViewResult - view Index executed in 143.14170000000001ms.
+2019-11-04 20:38:33.860 +08:00 [INF] Executed action Heavy.Controllers.UserController.Index (Heavy) in 1337.364ms
+2019-11-04 20:38:33.864 +08:00 [INF] Request finished in 1346.2784ms 200 text/html; charset=utf-8
+2019-11-04 20:38:33.906 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:33.906 +08:00 [INF] Request finished in 0.5867ms 404 
+2019-11-04 20:38:34.039 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:34.039 +08:00 [INF] Request finished in 0.3809ms 404 
+2019-11-04 20:38:34.143 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/Album  
+2019-11-04 20:38:34.146 +08:00 [INF] Route matched with {action = "Index", controller = "Album"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.AlbumController (Heavy).
+2019-11-04 20:38:34.150 +08:00 [INF] Authorization failed.
+2019-11-04 20:38:34.151 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2019-11-04 20:38:34.151 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2019-11-04 20:38:34.151 +08:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-11-04 20:38:34.151 +08:00 [INF] Executed action Heavy.Controllers.AlbumController.Index (Heavy) in 4.9218ms
+2019-11-04 20:38:34.151 +08:00 [INF] Request finished in 7.8227ms 302 
+2019-11-04 20:38:34.162 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/Account/Login?ReturnUrl=%2FAlbum  
+2019-11-04 20:38:34.163 +08:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller Heavy.Controllers.AccountController (Heavy).
+2019-11-04 20:38:34.202 +08:00 [INF] Executing action method Heavy.Controllers.AccountController.Login (Heavy) - Validation state: "Valid"
+2019-11-04 20:38:34.202 +08:00 [INF] Executed action method Heavy.Controllers.AccountController.Login (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0267ms.
+2019-11-04 20:38:34.202 +08:00 [INF] Executing ViewResult, running view Login.
+2019-11-04 20:38:34.205 +08:00 [INF] Executed ViewResult - view Login executed in 2.9365ms.
+2019-11-04 20:38:34.205 +08:00 [INF] Executed action Heavy.Controllers.AccountController.Login (Heavy) in 42.071200000000005ms
+2019-11-04 20:38:34.205 +08:00 [INF] Request finished in 42.9293ms 200 text/html; charset=utf-8
+2019-11-04 20:38:34.269 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:34.270 +08:00 [INF] Request finished in 0.4278ms 404 
+2019-11-04 20:38:34.308 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:34.308 +08:00 [INF] Request finished in 0.4428ms 404 
+2019-11-04 20:38:34.958 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/User  
+2019-11-04 20:38:34.958 +08:00 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Heavy.Controllers.UserController (Heavy).
+2019-11-04 20:38:34.987 +08:00 [INF] Executing action method Heavy.Controllers.UserController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:38:34.987 +08:00 [INF] Executed action method Heavy.Controllers.UserController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0692ms.
+2019-11-04 20:38:34.987 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:38:34.989 +08:00 [INF] Executed ViewResult - view Index executed in 1.5413000000000001ms.
+2019-11-04 20:38:34.989 +08:00 [INF] Executed action Heavy.Controllers.UserController.Index (Heavy) in 30.851200000000002ms
+2019-11-04 20:38:34.989 +08:00 [INF] Request finished in 31.3429ms 200 text/html; charset=utf-8
+2019-11-04 20:38:35.052 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:35.052 +08:00 [INF] Request finished in 0.465ms 404 
+2019-11-04 20:38:35.137 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:35.137 +08:00 [INF] Request finished in 0.429ms 404 
+2019-11-04 20:38:35.588 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/  
+2019-11-04 20:38:35.588 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:38:35.615 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:38:35.615 +08:00 [INF] logger
+2019-11-04 20:38:35.615 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1746ms.
+2019-11-04 20:38:35.616 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:38:35.753 +08:00 [INF] Executed ViewResult - view Index executed in 137.2826ms.
+2019-11-04 20:38:35.753 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 164.6216ms
+2019-11-04 20:38:35.753 +08:00 [INF] Request finished in 165.2444ms 200 text/html; charset=utf-8
+2019-11-04 20:38:35.788 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:35.789 +08:00 [INF] Request finished in 0.5166ms 404 
+2019-11-04 20:38:35.832 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:35.833 +08:00 [INF] Request finished in 0.984ms 404 
+2019-11-04 20:38:36.782 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/  
+2019-11-04 20:38:36.782 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:38:36.814 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:38:36.814 +08:00 [INF] logger
+2019-11-04 20:38:36.814 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0477ms.
+2019-11-04 20:38:36.814 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:38:36.815 +08:00 [INF] Executed ViewResult - view Index executed in 1.2084000000000001ms.
+2019-11-04 20:38:36.815 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 32.7644ms
+2019-11-04 20:38:36.815 +08:00 [INF] Request finished in 33.8762ms 200 text/html; charset=utf-8
+2019-11-04 20:38:36.847 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:36.847 +08:00 [INF] Request finished in 0.4366ms 404 
+2019-11-04 20:38:36.914 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:36.914 +08:00 [INF] Request finished in 0.5192ms 404 
+2019-11-04 20:38:37.670 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/User  
+2019-11-04 20:38:37.671 +08:00 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Heavy.Controllers.UserController (Heavy).
+2019-11-04 20:38:37.710 +08:00 [INF] Executing action method Heavy.Controllers.UserController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:38:37.711 +08:00 [INF] Executed action method Heavy.Controllers.UserController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0476ms.
+2019-11-04 20:38:37.711 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:38:37.713 +08:00 [INF] Executed ViewResult - view Index executed in 1.9318000000000002ms.
+2019-11-04 20:38:37.713 +08:00 [INF] Executed action Heavy.Controllers.UserController.Index (Heavy) in 42.054300000000005ms
+2019-11-04 20:38:37.713 +08:00 [INF] Request finished in 42.7517ms 200 text/html; charset=utf-8
+2019-11-04 20:38:37.749 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:37.749 +08:00 [INF] Request finished in 0.43ms 404 
+2019-11-04 20:38:37.826 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:38:37.827 +08:00 [INF] Request finished in 0.9686ms 404 
+2019-11-04 20:43:13.294 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-11-04 20:43:14.172 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/  
+2019-11-04 20:43:14.172 +08:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:55326/  0
+2019-11-04 20:43:14.244 +08:00 [INF] Request finished in 72.16ms 200 
+2019-11-04 20:43:14.491 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:43:14.680 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:43:14.686 +08:00 [INF] logger
+2019-11-04 20:43:14.697 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 4.0873ms.
+2019-11-04 20:43:14.755 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:43:16.421 +08:00 [INF] Executed ViewResult - view Index executed in 1702.9243000000001ms.
+2019-11-04 20:43:16.460 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 1968.2776000000001ms
+2019-11-04 20:43:16.492 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:43:16.496 +08:00 [INF] Request finished in 4.0815ms 404 
+2019-11-04 20:43:16.501 +08:00 [INF] Request finished in 2334.1466ms 200 text/html; charset=utf-8
+2019-11-04 20:43:26.628 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:44303/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:43:26.629 +08:00 [INF] Request finished in 0.4553ms 404 
+2019-11-04 20:45:33.707 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-11-04 20:45:35.281 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:45:35.725 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:45:35.890 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:45:35.897 +08:00 [INF] logger
+2019-11-04 20:45:35.902 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 4.5896ms.
+2019-11-04 20:45:35.947 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:45:36.683 +08:00 [INF] Executed ViewResult - view Index executed in 770.5505ms.
+2019-11-04 20:45:36.735 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:45:36.736 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 1010.0701ms
+2019-11-04 20:45:36.748 +08:00 [INF] Request finished in 11.8826ms 404 
+2019-11-04 20:45:36.770 +08:00 [INF] Request finished in 1496.1304ms 200 text/html; charset=utf-8
+2019-11-04 20:45:36.974 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:45:36.974 +08:00 [INF] Request finished in 0.3845ms 404 
+2019-11-04 20:46:08.471 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-11-04 20:46:14.962 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:46:15.105 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:46:15.116 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:46:15.120 +08:00 [INF] logger
+2019-11-04 20:46:15.124 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.9604ms.
+2019-11-04 20:46:15.148 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:46:15.488 +08:00 [INF] Executed ViewResult - view Index executed in 354.1096ms.
+2019-11-04 20:46:15.501 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 395.4909ms
+2019-11-04 20:46:15.537 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:46:15.549 +08:00 [INF] Request finished in 12.0885ms 404 
+2019-11-04 20:46:15.554 +08:00 [INF] Request finished in 593.5111ms 200 text/html; charset=utf-8
+2019-11-04 20:46:15.622 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:46:15.623 +08:00 [INF] Request finished in 0.4579ms 404 
+2019-11-04 20:46:15.673 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:46:15.680 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:46:15.681 +08:00 [INF] Request finished in 7.802ms 200 image/x-icon
+2019-11-04 20:46:26.325 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:46:26.326 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:46:26.326 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:46:26.326 +08:00 [INF] logger
+2019-11-04 20:46:26.326 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0777ms.
+2019-11-04 20:46:26.327 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:46:26.385 +08:00 [INF] Executed ViewResult - view Index executed in 58.9457ms.
+2019-11-04 20:46:26.386 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 59.7982ms
+2019-11-04 20:46:26.386 +08:00 [INF] Request finished in 60.4709ms 200 text/html; charset=utf-8
+2019-11-04 20:46:26.414 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:46:26.414 +08:00 [INF] Request finished in 1.79ms 404 
+2019-11-04 20:46:26.522 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/favicon.ico  
+2019-11-04 20:46:26.527 +08:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\net core\FIrstDemo\Heavy\wwwroot\favicon.ico'
+2019-11-04 20:46:26.528 +08:00 [INF] Request finished in 5.6632ms 200 image/x-icon
+2019-11-04 20:52:17.928 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-11-04 20:52:19.321 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/  
+2019-11-04 20:52:19.726 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Heavy.Controllers.HomeController (Heavy).
+2019-11-04 20:52:19.843 +08:00 [INF] Executing action method Heavy.Controllers.HomeController.Index (Heavy) - Validation state: "Valid"
+2019-11-04 20:52:19.846 +08:00 [INF] logger
+2019-11-04 20:52:19.852 +08:00 [INF] Executed action method Heavy.Controllers.HomeController.Index (Heavy), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.5739ms.
+2019-11-04 20:52:19.892 +08:00 [INF] Executing ViewResult, running view Index.
+2019-11-04 20:52:20.568 +08:00 [INF] Executed ViewResult - view Index executed in 707.26370000000009ms.
+2019-11-04 20:52:20.584 +08:00 [INF] Executed action Heavy.Controllers.HomeController.Index (Heavy) in 857.1438ms
+2019-11-04 20:52:20.625 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:52:20.641 +08:00 [INF] Request finished in 15.4273ms 404 
+2019-11-04 20:52:20.646 +08:00 [INF] Request finished in 1328.8735ms 200 text/html; charset=utf-8
+2019-11-04 20:52:20.859 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:88/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-11-04 20:52:20.860 +08:00 [INF] Request finished in 0.7652ms 404 

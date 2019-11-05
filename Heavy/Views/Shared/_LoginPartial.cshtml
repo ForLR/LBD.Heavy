@@ -1,0 +1,31 @@
+@*@tagHelperPrefix "my:"*@
+@*//tagHelper ǰ׺*@
+
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Heavy.Identity.Model.User> SignInManager
+@inject UserManager<Heavy.Identity.Model.User> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-controller="Account" asp-action="Logout" method="post" class="navbar-right">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+            </li>
+            <li>
+                @*<a asp-controller="Account" asp-action="Logout">Logout</a>*@
+
+                <button type="submit" class="btn btn-link navbar-btn navbar-link">Logout</button>
+            </li>
+        </ul>
+    </form>
+}
+else
+{
+    
+    <ul class="nav navbar-nav navbar-right">
+        <li><a asp-controller="User" asp-action="AddUser">注册  &nbsp;&nbsp;</a></li>
+        <li><a asp-controller="Account" asp-action="Login">登陆</a></li>
+    </ul>
+}
+@*<my:p Condition="SignInManager.IsSignedIn(User)" style="color:#b6ff00">hahahah </my:p>*@

@@ -1,0 +1,33 @@
+﻿@using Heavy.Identity.Model
+@model IEnumerable<User>
+@using Heavy.Repository
+@{
+    ViewData["Title"] = "Index";
+}
+@inject UserRepository _repository;
+<h2>Index</h2>
+
+<p>
+    <a asp-controller="User" asp-action="AddUser">Create New</a>
+</p>
+<table class="table">
+
+    <tbody>
+        @foreach (var item in @_repository.GetAll()) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit","User", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "User", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete","User", new { /* id=item.PrimaryKey */ })
+                        </td>
+                    </tr>
+            }
+     
+    </tbody>
+</table>
