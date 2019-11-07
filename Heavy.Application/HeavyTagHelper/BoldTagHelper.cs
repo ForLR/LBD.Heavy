@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Heavy
+namespace Heavy.Application.HeavyTagHelper
 {
     [HtmlTargetElement("bold")]
     [HtmlTargetElement(Attributes ="bold")] //属性设置起作用

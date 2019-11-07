@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-namespace Heavy.MyTagHelper
+namespace Heavy.Application.HeavyTagHelper
 {
     public class EmailTagHelper:TagHelper
     {

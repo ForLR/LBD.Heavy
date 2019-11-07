@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Heavy.Models;
+using Heavy.Application.Filters;
 
 namespace Heavy.Controllers
 {
@@ -17,7 +18,7 @@ namespace Heavy.Controllers
         {
             _logger = logger;
         }
-        [MyFilter]
+        [HeavyFilter]
         public IActionResult Index()
         {
             _logger.LogInformation("logger");

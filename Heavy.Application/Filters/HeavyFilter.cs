@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Heavy
+namespace Heavy.Application.Filters
 {
-    public class MyFilter : Attribute, IActionFilter, IOrderedFilter
+    public class HeavyFilter : Attribute, IActionFilter, IOrderedFilter
     {
         public int Order { get;}
 

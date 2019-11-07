@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Heavy.Validata
+namespace Heavy.Application.Validata
 {
     public class ValidataUrlAttribute : Attribute, IModelValidator
     {

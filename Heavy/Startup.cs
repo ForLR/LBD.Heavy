@@ -9,11 +9,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Heavy.Models;
 using Heavy.Repository;
-using Heavy.Auth;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
 using Heavy.Identity.Model;
 using Heavy.Identity.Data;
+using Heavy.Identity.Auth;
 
 namespace Heavy
 {
@@ -34,12 +34,11 @@ namespace Heavy
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
-             
             });
 
             //数据库
-            services.AddDbContext<ApplicationDbContext>();
-      
+            services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+
 
             services.AddIdentity<Identity.Model.User, IdentityRole>(option=> 
             {
@@ -47,9 +46,6 @@ namespace Heavy
                 option.Password.RequireNonAlphanumeric = false;
                 option.Password.RequireLowercase = false;
                 option.Password.RequireUppercase = false;
-               
-
-
             }).AddEntityFrameworkStores<ApplicationDbContext>();
            
             //services.AddAuthentication().AddGoogle(x=> 
@@ -86,7 +82,6 @@ namespace Heavy
             //内存缓存
             services.AddMemoryCache();
 
-            // services.AddDbContext<UserContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<UserRepository>();
             services.AddSingleton<IAuthorizationHandler, EmailHandler>();

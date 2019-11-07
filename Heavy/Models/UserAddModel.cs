@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Heavy.Controllers;
-using Heavy.Validata;
+using Heavy.Application.Validata;
 
 namespace Heavy.Models
 {

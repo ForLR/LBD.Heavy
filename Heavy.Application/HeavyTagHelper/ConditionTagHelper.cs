@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Heavy.MyTagHelper
+namespace Heavy.Application.HeavyTagHelper
 {
     [HtmlTargetElement(Attributes =nameof(Condition))]
     public class ConditionTagHelper : TagHelper
