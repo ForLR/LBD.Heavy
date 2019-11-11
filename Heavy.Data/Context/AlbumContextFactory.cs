@@ -9,9 +9,9 @@ using System.Text;
 namespace Heavy.Data.Context
 {
 
-    public class AlbumContextFactory : IDesignTimeDbContextFactory<AlbumContext>
+    public class AlbumContextFactory : IDesignTimeDbContextFactory<HeavyContext>
     {
-        public AlbumContext CreateDbContext(string[] args)
+        public HeavyContext CreateDbContext(string[] args)
         {
            // IConfigurationRoot configuration = new ConfigurationBuilder()
            //.SetBasePath(Directory.GetCurrentDirectory())
@@ -19,9 +19,9 @@ namespace Heavy.Data.Context
            //.Build();
            // var connectionStr = configuration["ConnectionStrings"];
 
-            var builder = new DbContextOptionsBuilder<AlbumContext>();
+            var builder = new DbContextOptionsBuilder<HeavyContext>();
             builder.UseMySql("Server=47.101.221.220;port=3306;uid=lanbudai;pwd=123258lR.;Database=Heavy");
-            return new AlbumContext(builder.Options);
+            return new HeavyContext(builder.Options);
         }
     }
 }

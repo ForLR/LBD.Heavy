@@ -10,6 +10,8 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Primitives;
 using Heavy.Models;
 using Heavy.Identity.Model;
+using Heavy.Domain.Core.Bus;
+using Heavy.Identity.Commands;
 
 namespace Heavy.Controllers
 {
@@ -18,10 +20,12 @@ namespace Heavy.Controllers
     {
         private readonly UserManager<User> _user;
         private readonly IMemoryCache _memoryCache;
-        public UserController(UserManager<User> user, IMemoryCache memoryCache)
+        private readonly IMediatorHandler _mediator;
+        public UserController(UserManager<User> user, IMemoryCache memoryCache, IMediatorHandler mediator)
         {
             _user = user;
             _memoryCache = memoryCache;
+            _mediator = mediator;
         }
         public async Task<IActionResult> Index()
         {
@@ -61,17 +65,19 @@ namespace Heavy.Controllers
                 Email = addUser.Email,
                 IDCard = addUser.IDCard,
                 Url=addUser.Url,
-                
-                
-
             };
             var result = await _user.CreateAsync(user,addUser.Password);
             if (result.Succeeded)
+            {
+                await _mediator.SendCommand(new AddUserCommand(user.UserName, user.Email));
                 return RedirectToAction("Index");
+            }
+               
             foreach (var item in result.Errors)
             {
                 ModelState.AddModelError(string.Empty,item.Description);
             }
+
             return View(addUser);
         }
 

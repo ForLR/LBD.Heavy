@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29209.62
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heavy", "Heavy\Heavy.csproj", "{D76AF432-6504-4454-A6E6-0320C42EAD20}"
 EndProject
@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heavy.Domain.Core", "Heavy.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heavy.Identity", "Heavy.Identity\Heavy.Identity.csproj", "{94E1D79D-4E7A-4F68-B6D8-DCE4AAE3BA43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heavy.Application", "Heavy.Application\Heavy.Application.csproj", "{89FFDBB0-3BD1-461F-B0BA-551D4CB24449}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heavy.Application", "Heavy.Application\Heavy.Application.csproj", "{89FFDBB0-3BD1-461F-B0BA-551D4CB24449}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heavy.Ioc", "Heavy.Ioc\Heavy.Ioc.csproj", "{996A2E01-418C-49B0-9EF9-4F8B3056C599}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +99,18 @@ Global
 		{89FFDBB0-3BD1-461F-B0BA-551D4CB24449}.Release|x64.Build.0 = Release|Any CPU
 		{89FFDBB0-3BD1-461F-B0BA-551D4CB24449}.Release|x86.ActiveCfg = Release|Any CPU
 		{89FFDBB0-3BD1-461F-B0BA-551D4CB24449}.Release|x86.Build.0 = Release|Any CPU
+		{996A2E01-418C-49B0-9EF9-4F8B3056C599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{996A2E01-418C-49B0-9EF9-4F8B3056C599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{996A2E01-418C-49B0-9EF9-4F8B3056C599}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{996A2E01-418C-49B0-9EF9-4F8B3056C599}.Debug|x64.Build.0 = Debug|Any CPU
+		{996A2E01-418C-49B0-9EF9-4F8B3056C599}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{996A2E01-418C-49B0-9EF9-4F8B3056C599}.Debug|x86.Build.0 = Debug|Any CPU
+		{996A2E01-418C-49B0-9EF9-4F8B3056C599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{996A2E01-418C-49B0-9EF9-4F8B3056C599}.Release|Any CPU.Build.0 = Release|Any CPU
+		{996A2E01-418C-49B0-9EF9-4F8B3056C599}.Release|x64.ActiveCfg = Release|Any CPU
+		{996A2E01-418C-49B0-9EF9-4F8B3056C599}.Release|x64.Build.0 = Release|Any CPU
+		{996A2E01-418C-49B0-9EF9-4F8B3056C599}.Release|x86.ActiveCfg = Release|Any CPU
+		{996A2E01-418C-49B0-9EF9-4F8B3056C599}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

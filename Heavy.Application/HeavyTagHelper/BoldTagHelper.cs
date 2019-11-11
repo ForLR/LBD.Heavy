@@ -11,7 +11,7 @@ namespace Heavy.Application.HeavyTagHelper
     public class BoldTagHelper:TagHelper
     {
         [HtmlAttributeName("my-style")]
-        public MyStyle myStyle { get; set; }
+        public MyStyle MyStyle { get; set; }
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
@@ -19,9 +19,9 @@ namespace Heavy.Application.HeavyTagHelper
             
             output.PreContent.SetHtmlContent("<strong>");
             output.PostContent.SetHtmlContent("</strong>");
-            if (myStyle!=null)
+            if (MyStyle!=null)
             {
-                output.Attributes.SetAttribute("style", $"color:{myStyle.Color}; font-size:{myStyle.FontSize}");
+                output.Attributes.SetAttribute("style", $"color:{MyStyle.Color}; font-size:{MyStyle.FontSize}");
             }
           
         }

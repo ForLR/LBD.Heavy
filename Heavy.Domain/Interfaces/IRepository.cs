@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Heavy.Domain.Interfaces
 {
-    interface IRepository<TEntity>:IDisposable where TEntity:class
+    public interface IRepository<TEntity>:IDisposable where TEntity:class
     {
-        void Add(TEntity entity);
+        Task Add(TEntity entity);
 
-        void Update(TEntity entity);
+        Task Update(TEntity entity);
 
-        TEntity GetById(Guid id);
+        Task<TEntity> GetById(Guid id);
 
-        IQueryable<TEntity> GetAll();
+        Task<IQueryable<TEntity>> GetAll();
 
-        void Remove(Guid id);
+        Task Remove(Guid id);
 
-        int SaveChanges();
+        Task<int> SaveChanges();
     }
 }

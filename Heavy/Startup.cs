@@ -8,12 +8,14 @@ using Heavy.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Heavy.Models;
-using Heavy.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
 using Heavy.Identity.Model;
 using Heavy.Identity.Data;
 using Heavy.Identity.Auth;
+using Heavy.Ioc;
+using Heavy.Repository;
+using MediatR;
 
 namespace Heavy
 {
@@ -40,7 +42,7 @@ namespace Heavy
             services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
 
-            services.AddIdentity<Identity.Model.User, IdentityRole>(option=> 
+            services.AddIdentity<User, IdentityRole>(option=> 
             {
                 option.Password.RequiredLength = 1;
                 option.Password.RequireNonAlphanumeric = false;
@@ -48,11 +50,7 @@ namespace Heavy
                 option.Password.RequireUppercase = false;
             }).AddEntityFrameworkStores<ApplicationDbContext>();
            
-            //services.AddAuthentication().AddGoogle(x=> 
-            //{
-            //    x.ClientId = "122";
-            //    x.ClientSecret = "qwe";
-            //});
+
             #region 授权
             services.AddAuthorization(option =>
             {
@@ -82,10 +80,11 @@ namespace Heavy
             //内存缓存
             services.AddMemoryCache();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddScoped<UserRepository>();
-            services.AddSingleton<IAuthorizationHandler, EmailHandler>();
-            services.AddSingleton<IAuthorizationHandler, RoleHandler>();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMediatR(typeof(Startup));
+
+            // Inject 注入
+            RegisterService(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -127,6 +126,13 @@ namespace Heavy
                     template: "{controller=Home}/{action=Index}/{id?}");
               
             });
+        }
+
+        public static void RegisterService(IServiceCollection services)
+        {
+            services.AddScoped<UserRepository>();
+            NativeInjector.RegisterService(services);
+
         }
     }
 }

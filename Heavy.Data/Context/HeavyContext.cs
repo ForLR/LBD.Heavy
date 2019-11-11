@@ -8,9 +8,9 @@ using System.Text;
 
 namespace Heavy.Data.Context
 {
-    public class AlbumContext : DbContext
+    public class HeavyContext : DbContext
     {
-        public AlbumContext(DbContextOptions<AlbumContext> options):base(options)
+        public HeavyContext(DbContextOptions<HeavyContext> options):base(options)
         {
 
         }

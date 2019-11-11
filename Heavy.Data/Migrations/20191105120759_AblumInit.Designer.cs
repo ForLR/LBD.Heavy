@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Heavy.Data.Migrations
 {
-    [DbContext(typeof(AlbumContext))]
+    [DbContext(typeof(HeavyContext))]
     [Migration("20191105120759_AblumInit")]
     partial class AblumInit
     {

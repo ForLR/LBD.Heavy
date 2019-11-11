@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Heavy.Domain\Heavy.Domain.csproj" />
-    <ProjectReference Include="..\Heavy\Heavy.csproj" />
   </ItemGroup>
 
 </Project>

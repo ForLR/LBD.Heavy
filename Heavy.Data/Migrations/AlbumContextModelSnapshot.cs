@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Heavy.Data.Migrations
 {
-    [DbContext(typeof(AlbumContext))]
+    [DbContext(typeof(HeavyContext))]
     partial class AlbumContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
