@@ -17,7 +17,6 @@ namespace Heavy.Identity.Commands
         public override bool IsValid()
         {
             return true;
-            //throw new NotImplementedException();
         }
     }
 }

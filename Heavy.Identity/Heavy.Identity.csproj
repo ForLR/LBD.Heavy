@@ -15,7 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Heavy.Data\Heavy.Data.csproj" />
     <ProjectReference Include="..\Heavy.Domain.Core\Heavy.Domain.Core.csproj" />
+    <ProjectReference Include="..\Heavy.Domain\Heavy.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

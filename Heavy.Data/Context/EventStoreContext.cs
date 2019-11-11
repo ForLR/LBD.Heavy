@@ -11,6 +11,10 @@ namespace Heavy.Data.Context
     public class EventStoreContext : DbContext
     {
         public DbSet<StoredEvent> StoredEvents { get; set; }
+        public EventStoreContext()
+        {
+
+        }
         public EventStoreContext(DbContextOptions<EventStoreContext> options):base(options)
         {
 
@@ -27,7 +31,8 @@ namespace Heavy.Data.Context
             //var connectionStr = configution["ConnectionStrings"];
             //optionsBuilder.UseMySql(connectionStr);
 
-            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseMySql("Server=47.101.221.220;port=3306;uid=lanbudai;pwd=123258lR.;Database=Heavy");
+           // base.OnConfiguring(optionsBuilder);
         }
     }
 }

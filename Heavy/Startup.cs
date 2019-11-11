@@ -14,7 +14,7 @@ using Heavy.Identity.Model;
 using Heavy.Identity.Data;
 using Heavy.Identity.Auth;
 using Heavy.Ioc;
-using Heavy.Repository;
+using Heavy.Repositorys;
 using MediatR;
 
 namespace Heavy
@@ -130,7 +130,6 @@ namespace Heavy
 
         public static void RegisterService(IServiceCollection services)
         {
-            services.AddScoped<UserRepository>();
             NativeInjector.RegisterService(services);
 
         }

@@ -1,6 +1,6 @@
 ﻿@using Heavy.Identity.Model
 @model IEnumerable<User>
-@using Heavy.Repository
+@using Heavy.Repositorys
 @{
     ViewData["Title"] = "Index";
 }
@@ -13,7 +13,7 @@
 <table class="table">
 
     <tbody>
-        @foreach (var item in @_repository.GetAll()) {
+        @foreach (var item in  @_repository.GetAll().Result) {
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.Id)

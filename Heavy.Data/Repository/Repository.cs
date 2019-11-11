@@ -9,15 +9,17 @@ using System.Threading.Tasks;
 
 namespace Heavy.Data.Repository
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class Repository<TContext,TEntity> : IRepository<TEntity> where TEntity : class where TContext:DbContext
     {
-        private readonly HeavyContext _context;
+        private readonly TContext _context;
         private readonly DbSet<TEntity> db;
-        public Repository(HeavyContext context)
+        public Repository(TContext context)
         {
             this._context = context;
             this.db = context.Set<TEntity>();
         }
+
+
         public Task Add(TEntity entity)
         {
             return db.AddAsync(entity);
@@ -29,7 +31,7 @@ namespace Heavy.Data.Repository
             GC.SuppressFinalize(this);
         }
 
-        public Task<IQueryable<TEntity>> GetAll()
+        public Task<List<TEntity>> GetAll()
         {
             throw new NotImplementedException();
         }
