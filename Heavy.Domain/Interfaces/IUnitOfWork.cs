@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Heavy.Domain.Interfaces
 {
-    interface IUnitOfWork:IDisposable
+    public interface IUnitOfWork:IDisposable
     {
         void BeginTransation();
 

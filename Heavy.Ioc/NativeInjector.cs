@@ -6,9 +6,12 @@ using Heavy.Domain.Core.Bus;
 using Heavy.Domain.Core.Events;
 using Heavy.Domain.Interfaces;
 using Heavy.Identity.Auth;
+using Heavy.Identity.CommandHandler;
+using Heavy.Identity.Commands;
 using Heavy.Identity.Data;
 using Heavy.Identity.Model;
 using Heavy.Repositorys;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,6 +37,7 @@ namespace Heavy.Ioc
             services.AddSingleton<IAuthorizationHandler, RoleHandler>();
             services.AddScoped<EventStoreContext>();
             services.AddScoped<ApplicationDbContext>();
+            services.AddScoped<IRequestHandler<AddUserCommand, bool>, UserCommandHandler>();
 
 
             services.AddScoped<UserRepository>();

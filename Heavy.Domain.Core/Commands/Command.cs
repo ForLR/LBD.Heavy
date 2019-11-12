@@ -10,7 +10,7 @@ namespace Heavy.Domain.Core.Commands
     {
         public DateTime Timestamp { get; protected set; }
 
-        public ValidationResult validationResult { get; set; }
+        public FluentValidation.Results.ValidationResult validationResult { get; set; }
         protected Command()
         {
             this.Timestamp = DateTime.Now;

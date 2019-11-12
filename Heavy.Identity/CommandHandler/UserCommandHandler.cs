@@ -1,5 +1,6 @@
 ﻿using Heavy.Domain.Core.Bus;
 using Heavy.Identity.Commands;
+using Heavy.Identity.Events;
 using Heavy.Repositorys;
 using MediatR;
 using System;
@@ -21,8 +22,10 @@ namespace Heavy.Identity.CommandHandler
         }
         public Task<bool> Handle(AddUserCommand request, CancellationToken cancellationToken)
         {
-           // _bus.RaiseEvent();
-            throw new NotImplementedException();
+            // _bus.RaiseEvent();
+            //userRepository.Add(new Model.User { });
+            _bus.RaiseEvent(new AddUserEvent(request.AggregateId,request.UserName,request.Email,DateTime.Now));
+            return Task.FromResult(true);
         }
     }
 }
