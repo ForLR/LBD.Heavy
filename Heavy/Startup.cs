@@ -4,18 +4,16 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Heavy.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Heavy.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
 using Heavy.Identity.Model;
 using Heavy.Identity.Data;
 using Heavy.Identity.Auth;
 using Heavy.Ioc;
-using Heavy.Repositorys;
 using MediatR;
+using AutoMapper;
+using System.Reflection;
 
 namespace Heavy
 {
@@ -82,6 +80,9 @@ namespace Heavy
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMediatR(typeof(Startup));
+
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
 
             // Inject 注入
             RegisterService(services);

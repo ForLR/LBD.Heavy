@@ -12,6 +12,8 @@ using Heavy.Models;
 using Heavy.Identity.Model;
 using Heavy.Domain.Core.Bus;
 using Heavy.Identity.Commands;
+using Heavy.Application.Interfaces;
+using Heavy.Application.ViewModels.Users;
 
 namespace Heavy.Controllers
 {
@@ -21,11 +23,14 @@ namespace Heavy.Controllers
         private readonly UserManager<User> _user;
         private readonly IMemoryCache _memoryCache;
         private readonly IMediatorHandler _mediator;
-        public UserController(UserManager<User> user, IMemoryCache memoryCache, IMediatorHandler mediator)
+
+        private readonly IUserAppService _userAppService;
+        public UserController(UserManager<User> user, IMemoryCache memoryCache, IMediatorHandler mediator, IUserAppService userAppService)
         {
             _user = user;
             _memoryCache = memoryCache;
             _mediator = mediator;
+            this._userAppService= userAppService;
         }
         public async Task<IActionResult> Index()
         {
@@ -54,29 +59,31 @@ namespace Heavy.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> AddUser(UserAddModel addUser)
+        public  IActionResult AddUser(UserViewModel addUser)
         {
-
+         
             if (!ModelState.IsValid)
                 return View(addUser);
-            var user = new User
-            {
-                UserName = addUser.UserName,
-                Email = addUser.Email,
-                IDCard = addUser.IDCard,
-                Url=addUser.Url,
-            };
-            var result = await _user.CreateAsync(user,addUser.Password);
-            if (result.Succeeded)
-            {
-                await _mediator.SendCommand(new AddUserCommand(user.UserName, user.Email));
-                return RedirectToAction("Index");
-            }
+            _userAppService.Register(addUser);
+
+            //var user = new User
+            //{
+            //    UserName = addUser.UserName,
+            //    Email = addUser.Email,
+            //    IDCard = addUser.IDCard,
+            //    Url=addUser.Url,
+            //};
+            //var result = await _user.CreateAsync(user,addUser.Password);
+            //if (result.Succeeded)
+            //{
+            //    await _mediator.SendCommand(new RegisterUserCommand(user.UserName, user.Email));
+            //    return RedirectToAction("Index");
+            //}
                
-            foreach (var item in result.Errors)
-            {
-                ModelState.AddModelError(string.Empty,item.Description);
-            }
+            //foreach (var item in result.Errors)
+            //{
+            //    ModelState.AddModelError(string.Empty,item.Description);
+            //}
 
             return View(addUser);
         }
@@ -99,9 +106,9 @@ namespace Heavy.Controllers
             return View(vm);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(UserEditModel editUser)
+        public async Task<IActionResult> Edit(UserViewModel editUser)
         {
-            var user = await _user.FindByIdAsync(editUser.id);
+            var user = await _user.FindByIdAsync(editUser.Id);
             if (user == null)
                 RedirectToAction("Index");
             user.Email = editUser.Email;

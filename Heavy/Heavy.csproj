@@ -7,13 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Logs\LogDatas\**" />
     <Compile Remove="obj\**" />
+    <Content Remove="Logs\LogDatas\**" />
     <Content Remove="obj\**" />
+    <EmbeddedResource Remove="Logs\LogDatas\**" />
     <EmbeddedResource Remove="obj\**" />
+    <None Remove="Logs\LogDatas\**" />
     <None Remove="obj\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Heavy.Application\Heavy.Application.csproj" />
     <ProjectReference Include="..\Heavy.Data\Heavy.Data.csproj" />
     <ProjectReference Include="..\Heavy.Identity\Heavy.Identity.csproj" />
   </ItemGroup>

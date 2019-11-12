@@ -1,4 +1,6 @@
-﻿using Heavy.Data.Context;
+﻿using Heavy.Application.Interfaces;
+using Heavy.Application.Services;
+using Heavy.Data.Context;
 using Heavy.Data.EventSourcing;
 using Heavy.Data.Repository;
 using Heavy.Data.Repository.EvenSourcing;
@@ -29,7 +31,7 @@ namespace Heavy.Ioc
 
 
             services.AddScoped<IEventStoreRepository, EventStoreRepository>();
-
+            services.AddScoped<IUserAppService, UserAppService>();
          
             services.AddScoped<IMediatorHandler, InMemoryBus>();
 
@@ -37,7 +39,9 @@ namespace Heavy.Ioc
             services.AddSingleton<IAuthorizationHandler, RoleHandler>();
             services.AddScoped<EventStoreContext>();
             services.AddScoped<ApplicationDbContext>();
-            services.AddScoped<IRequestHandler<AddUserCommand, bool>, UserCommandHandler>();
+
+
+            services.AddScoped<IRequestHandler<RegisterUserCommand, bool>, UserCommandHandler>();
 
 
             services.AddScoped<UserRepository>();
