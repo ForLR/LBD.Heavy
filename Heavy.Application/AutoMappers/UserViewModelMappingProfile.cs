@@ -11,7 +11,7 @@ namespace Heavy.Application.AutoMappers
     {
         public UserViewModelMappingProfile()
         {
-            this.CreateMap<UserViewModel, RegisterUserCommand>().ConstructUsing(x=>new RegisterUserCommand(x.UserName,x.Email,x.IDCard,x.Url));
+            this.CreateMap<UserViewModel, RegisterUserCommand>().ConstructUsing(x=>new RegisterUserCommand(x.UserName,x.Password,x.Email,x.IDCard,x.Url));
         }
     }
 }

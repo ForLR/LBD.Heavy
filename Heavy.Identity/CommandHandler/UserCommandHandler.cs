@@ -35,7 +35,7 @@ namespace Heavy.Identity.CommandHandler
                 IDCard = request.IDCard,
                 Url = request.Url,
             };
-            var result = _user.CreateAsync(user);
+            var result = _user.CreateAsync(user,request.PassoWord);
             if (result.Result.Succeeded)
             {
                 _bus.RaiseEvent(new AddUserEvent(user.Id, user.UserName, user.Email, DateTime.Now));

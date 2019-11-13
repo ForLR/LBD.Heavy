@@ -7,15 +7,17 @@ namespace Heavy.Identity.Commands
 {
     public class RegisterUserCommand : Command
     {
-        public RegisterUserCommand(string userName,string email,string idCard,string url)
+        public RegisterUserCommand(string userName,string passWord,string email,string idCard,string url)
         {
             this.UserName = userName;
             this.Email = email;
             this.IDCard = idCard;
             this.Url = url;
-          
+            this.PassoWord = passWord;
         }
         public string UserName { get; set; }
+
+        public string PassoWord { get; set; }
         public string Email { get; set; }
         public string IDCard { get; set; }
 

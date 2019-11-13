@@ -20,7 +20,7 @@ namespace Heavy
 
         public void Dispose()
         {
-            
+            GC.SuppressFinalize(this);
         }
     }
 }
