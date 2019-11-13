@@ -6,7 +6,7 @@ namespace Heavy.Domain.Core.Notifications
 {
     public class DomainNotificationEvent: Events.Event
     {
-        public Guid DomainNotificationId { get; private set; }
+        public string DomainNotificationId { get; private set; }
 
         public string Key { get;private set; }
 
@@ -15,7 +15,7 @@ namespace Heavy.Domain.Core.Notifications
         public int Version { get; private set; }
         public DomainNotificationEvent(string key,string value)
         {
-            this.DomainNotificationId = Guid.NewGuid();
+            this.DomainNotificationId = Guid.NewGuid().ToString();
             Version = 1;
             this.Key = key;
             this.Value = value;

@@ -19,7 +19,7 @@ namespace Heavy.Domain.Core.Bus
         }
         public Task RaiseEvent<T>(T @event) where T : Event
         {
-            if (!@event.MessageType.Equals("DomainNotification"))
+            if (!@event.MessageType.Equals("DomainNotificationEvent")) //有多播 错误通知 则不保存事件至数据库
             {
                 _eventStore?.Save(@event);
             }

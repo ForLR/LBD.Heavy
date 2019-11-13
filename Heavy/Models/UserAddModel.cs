@@ -11,7 +11,7 @@ namespace Heavy.Models
 {
     public class UserAddModel
     {
-        [Remote(nameof(UserController.UserNameExist),"User",ErrorMessage ="用户名已存在")]
+        //[Remote(nameof(UserController.UserNameExist),"User",ErrorMessage ="用户名已存在")]
         public string UserName { get; set; }
 
         [Required]

@@ -1,4 +1,5 @@
 ﻿using Heavy.Domain.Core.Bus;
+using Heavy.Domain.Core.Notifications;
 using Heavy.Identity.Commands;
 using Heavy.Identity.Events;
 using Heavy.Identity.Model;
@@ -35,6 +36,12 @@ namespace Heavy.Identity.CommandHandler
                 IDCard = request.IDCard,
                 Url = request.Url,
             };
+            if ( _user.FindByNameAsync(user.UserName).Result!=null)
+            {
+                _bus.RaiseEvent(new DomainNotificationEvent(request.MessageType,"已存在该用户名的用户"));
+                return Task.FromResult(false);
+            }
+
             var result = _user.CreateAsync(user,request.PassoWord);
             if (result.Result.Succeeded)
             {

@@ -14,6 +14,8 @@ using Heavy.Domain.Core.Bus;
 using Heavy.Identity.Commands;
 using Heavy.Application.Interfaces;
 using Heavy.Application.ViewModels.Users;
+using MediatR;
+using Heavy.Domain.Core.Notifications;
 
 namespace Heavy.Controllers
 {
@@ -23,14 +25,16 @@ namespace Heavy.Controllers
         private readonly UserManager<User> _user;
         private readonly IMemoryCache _memoryCache;
         private readonly IMediatorHandler _mediator;
+        private readonly DomainNotificationEventHandler _notification;
 
         private readonly IUserAppService _userAppService;
-        public UserController(UserManager<User> user, IMemoryCache memoryCache, IMediatorHandler mediator, IUserAppService userAppService)
+        public UserController(UserManager<User> user, IMemoryCache memoryCache, IMediatorHandler mediator, IUserAppService userAppService, INotificationHandler<DomainNotificationEvent> notification)
         {
             _user = user;
             _memoryCache = memoryCache;
             _mediator = mediator;
             this._userAppService= userAppService;
+            this._notification = notification as DomainNotificationEventHandler;
         }
         public async Task<IActionResult> Index()
         {
@@ -66,25 +70,14 @@ namespace Heavy.Controllers
                 return View(addUser);
             _userAppService.Register(addUser);
 
-            //var user = new User
-            //{
-            //    UserName = addUser.UserName,
-            //    Email = addUser.Email,
-            //    IDCard = addUser.IDCard,
-            //    Url=addUser.Url,
-            //};
-            //var result = await _user.CreateAsync(user,addUser.Password);
-            //if (result.Succeeded)
-            //{
-            //    await _mediator.SendCommand(new RegisterUserCommand(user.UserName, user.Email));
-            //    return RedirectToAction("Index");
-            //}
-               
-            //foreach (var item in result.Errors)
-            //{
-            //    ModelState.AddModelError(string.Empty,item.Description);
-            //}
-
+            if (!_notification.HasNotofications())
+            {
+                return RedirectToAction("Index");
+            }
+            foreach (var item in _notification.GetDomainNotifications())
+            {
+                ModelState.AddModelError(string.Empty, item.Value);
+            }
             return View(addUser);
         }
 

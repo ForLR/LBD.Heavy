@@ -6,6 +6,7 @@ using Heavy.Data.Repository;
 using Heavy.Data.Repository.EvenSourcing;
 using Heavy.Domain.Core.Bus;
 using Heavy.Domain.Core.Events;
+using Heavy.Domain.Core.Notifications;
 using Heavy.Domain.Interfaces;
 using Heavy.Identity.Auth;
 using Heavy.Identity.CommandHandler;
@@ -43,6 +44,8 @@ namespace Heavy.Ioc
 
             services.AddScoped<IRequestHandler<RegisterUserCommand, bool>, UserCommandHandler>();
 
+
+            services.AddScoped<INotificationHandler<DomainNotificationEvent>, DomainNotificationEventHandler>();
 
             services.AddScoped<UserRepository>();
             services.AddScoped<IUser, AspNetUser>();
