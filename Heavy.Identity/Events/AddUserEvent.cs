@@ -7,7 +7,7 @@ namespace Heavy.Identity.Events
 {
     public class AddUserEvent:Event
     {
-        public AddUserEvent(Guid id, string name, string email, DateTime birthDate)
+        public AddUserEvent(string id, string name, string email, DateTime birthDate)
         {
             Id = id;
             UserName = name;
@@ -15,7 +15,7 @@ namespace Heavy.Identity.Events
             BirthDate = birthDate;
             AggregateId = id;
         }
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         public string UserName { get; set; }
 
         public string Email { get; set; }

@@ -38,7 +38,7 @@ namespace Heavy.Identity.CommandHandler
             var result = _user.CreateAsync(user);
             if (result.Result.Succeeded)
             {
-                _bus.RaiseEvent(new AddUserEvent(request.AggregateId, request.UserName, request.Email, DateTime.Now));
+                _bus.RaiseEvent(new AddUserEvent(user.Id, user.UserName, user.Email, DateTime.Now));
             }
             return Task.FromResult(true);
         }

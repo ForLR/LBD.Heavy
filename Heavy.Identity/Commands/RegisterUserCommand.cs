@@ -13,6 +13,7 @@ namespace Heavy.Identity.Commands
             this.Email = email;
             this.IDCard = idCard;
             this.Url = url;
+          
         }
         public string UserName { get; set; }
         public string Email { get; set; }

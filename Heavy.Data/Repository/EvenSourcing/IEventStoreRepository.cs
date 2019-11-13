@@ -8,6 +8,6 @@ namespace Heavy.Data.Repository.EvenSourcing
     public interface IEventStoreRepository : IDisposable
     {
         void Add(StoredEvent storedEvent);
-        IList<StoredEvent> All(Guid aggregateId);
+        IList<StoredEvent> All(string aggregateId);
     }
 }

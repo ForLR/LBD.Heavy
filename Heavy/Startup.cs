@@ -14,6 +14,7 @@ using Heavy.Ioc;
 using MediatR;
 using AutoMapper;
 using System.Reflection;
+using Heavy.Application.AutoMappers;
 
 namespace Heavy
 {
@@ -78,11 +79,15 @@ namespace Heavy
             //内存缓存
             services.AddMemoryCache();
 
+            //AutoMapper
+            services.AddAutoMapper(typeof(AutoMappingConfig));
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            //MediatR
             services.AddMediatR(typeof(Startup));
 
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
+        
 
             // Inject 注入
             RegisterService(services);

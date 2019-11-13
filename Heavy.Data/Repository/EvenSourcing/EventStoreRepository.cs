@@ -25,7 +25,7 @@ namespace Heavy.Data.Repository.EvenSourcing
             _context.SaveChanges();
         }
 
-        public IList<StoredEvent> All(Guid aggregateId)
+        public IList<StoredEvent> All(string aggregateId)
         {
             return _context.StoredEvents.Where(x => x.AggregateId == aggregateId).ToList();
         }
