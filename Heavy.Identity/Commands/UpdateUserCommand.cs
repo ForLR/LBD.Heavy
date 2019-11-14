@@ -5,19 +5,20 @@ using System.Text;
 
 namespace Heavy.Identity.Commands
 {
-    public class RegisterUserCommand : Command
+    public class UpdateUserCommand : Command
     {
-        public RegisterUserCommand(string userName,string passWord,string email,string idCard,string url) 
+        public UpdateUserCommand(string id,string userName, string email, string idCard, string url)
         {
+            this.Id = id;
             this.UserName = userName;
             this.Email = email;
             this.IDCard = idCard;
             this.Url = url;
-            this.PassoWord = passWord;
         }
+
+        public string Id { get; set; }
         public string UserName { get; set; }
 
-        public string PassoWord { get; set; }
         public string Email { get; set; }
         public string IDCard { get; set; }
 
@@ -26,6 +27,5 @@ namespace Heavy.Identity.Commands
         {
             return true;
         }
-
     }
 }

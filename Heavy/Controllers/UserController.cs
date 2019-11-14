@@ -88,38 +88,47 @@ namespace Heavy.Controllers
             if (user == null)
                 RedirectToAction("Index");
             var claims = await _user.GetClaimsAsync(user);
-            var vm = new UserEditModel
+            var vm = new UserViewModel
             {
                 Email=user.Email,
-                id=user.Id,
+                Id=user.Id,
                 IDCard=user.IDCard,
                 UserName=user.UserName,
+                Url=user.Url,
                 Claims= claims.Select(x => x.Value).ToList()
             };
+         
             return View(vm);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(UserViewModel editUser)
+        public  IActionResult Edit(UserViewModel editUser)
         {
-            var user = await _user.FindByIdAsync(editUser.Id);
-            if (user == null)
-                RedirectToAction("Index");
-            user.Email = editUser.Email;
-            user.IDCard = editUser.IDCard;
-            user.UserName = editUser.UserName;
-            var result = await _user.UpdateAsync(user);
-            if (result.Succeeded)
-                return RedirectToAction("Index");
-
-            foreach (var item in result.Errors)
+            if (!ModelState.IsValid)
+                return View(editUser);
+            _userAppService.Update(editUser);
+            if (!_notification.HasNotofications())
             {
-                ModelState.AddModelError(string.Empty, "更新用户条目出错");
+                return RedirectToAction("Index");
             }
-            return View(user);
+            foreach (var item in _notification.GetDomainNotifications())
+            {
+                ModelState.AddModelError(string.Empty, item.Value);
+            }
+            return View(editUser);
         }
 
         public async Task<IActionResult> Delete(string id)
         {
+            //_userAppService.DeleteAsync(id);
+            //if (!_notification.HasNotofications())
+            //{
+            //    return RedirectToAction("Index");
+            //}
+            //foreach (var item in _notification.GetDomainNotifications())
+            //{
+            //    ModelState.AddModelError(string.Empty, item.Value);
+            //}
+
             var user = await _user.FindByIdAsync(id);
             if (user!=null)
             {

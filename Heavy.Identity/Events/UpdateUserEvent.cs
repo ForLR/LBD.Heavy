@@ -1,31 +1,27 @@
-﻿using Heavy.Domain.Core.Commands;
+﻿using Heavy.Domain.Core.Events;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Heavy.Identity.Commands
+namespace Heavy.Identity.Events
 {
-    public class RegisterUserCommand : Command
+    public class UpdateUserEvent: Event
     {
-        public RegisterUserCommand(string userName,string passWord,string email,string idCard,string url) 
+        public UpdateUserEvent(string id, string userName, string email, string idCard, string url)
         {
+            this.Id = id;
             this.UserName = userName;
             this.Email = email;
             this.IDCard = idCard;
             this.Url = url;
-            this.PassoWord = passWord;
+            this.AggregateId = id;
         }
+        public string Id { get; set; }
         public string UserName { get; set; }
 
-        public string PassoWord { get; set; }
         public string Email { get; set; }
         public string IDCard { get; set; }
 
         public string Url { get; set; }
-        public override bool IsValid()
-        {
-            return true;
-        }
-
     }
 }

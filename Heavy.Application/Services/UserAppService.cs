@@ -47,7 +47,8 @@ namespace Heavy.Application.Services
 
         public void Update(UserViewModel user)
         {
-            throw new NotImplementedException();
+            var updateCommand = _mapper.Map<UpdateUserCommand>(user);
+            _mediator.SendCommand(updateCommand);
         }
     }
 }
