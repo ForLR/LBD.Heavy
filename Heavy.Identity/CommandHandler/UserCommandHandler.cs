@@ -11,7 +11,10 @@ using System.Threading.Tasks;
 
 namespace Heavy.Identity.CommandHandler
 {
-    public class UserCommandHandler : IRequestHandler<RegisterUserCommand, bool>,IRequestHandler<UpdateUserCommand,bool>
+    public class UserCommandHandler : 
+        IRequestHandler<RegisterUserCommand, bool>,
+        IRequestHandler<UpdateUserCommand,bool>,
+        IRequestHandler<DeleteUserCommand, bool>
     {
         
         private readonly IMediatorHandler _bus;
@@ -92,5 +95,28 @@ namespace Heavy.Identity.CommandHandler
             
             
         }
+
+        public Task<bool> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
+        {
+            var user =  _user.FindByIdAsync(request.Id).Result;
+            if (user == null)
+            {
+                throw new NotImplementedException();
+            }
+            var result = _user.DeleteAsync(user);
+            if (result.Result.Succeeded)
+            {
+                _bus.RaiseEvent(new UpdateUserEvent(user.Id, user.UserName, user.Email, user.Id, user.Url));
+                return Task.FromResult(true);
+            }
+            else
+            {
+                foreach (var item in result.Result.Errors)
+                {
+                    _bus.RaiseEvent(new DomainNotificationEvent(request.MessageType, item.Description)); ;
+                }
+                return Task.FromResult(false);
+            }
+        }
     }
-}
+    }

@@ -23,36 +23,21 @@ namespace Heavy.Controllers
     public class UserController : Controller
     {
         private readonly UserManager<User> _user;
-        private readonly IMemoryCache _memoryCache;
-        private readonly IMediatorHandler _mediator;
         private readonly DomainNotificationEventHandler _notification;
 
         private readonly IUserAppService _userAppService;
-        public UserController(UserManager<User> user, IMemoryCache memoryCache, IMediatorHandler mediator, IUserAppService userAppService, INotificationHandler<DomainNotificationEvent> notification)
+        public UserController(UserManager<User> user, IUserAppService userAppService, INotificationHandler<DomainNotificationEvent> notification)
         {
             _user = user;
-            _memoryCache = memoryCache;
-            _mediator = mediator;
             this._userAppService= userAppService;
             this._notification = notification as DomainNotificationEventHandler;
         }
         public async Task<IActionResult> Index()
         {
 
-            if (!_memoryCache.TryGetValue("Memory", out List<User> result))
-            {
-                result = await _user.Users.ToListAsync();
-                var cacheEntryOptions = new MemoryCacheEntryOptions()
-                    .SetAbsoluteExpiration(TimeSpan.FromSeconds(30));//绝对过期时间
-                _memoryCache.Set("Memory", result, cacheEntryOptions);
-            }
+            var result = await _userAppService.AllViewModel();
 
-            //result = _memoryCache.GetOrCreate("Momory", entry =>
-            //{
-            //    entry.SetAbsoluteExpiration(TimeSpan.FromSeconds(30));
-            //    return _user.Users.ToList();
-            //});
-         
+
             return View(result);
         }
         [AllowAnonymous]
@@ -117,28 +102,19 @@ namespace Heavy.Controllers
             return View(editUser);
         }
 
-        public async Task<IActionResult> Delete(string id)
+        public IActionResult Delete(string id)
         {
-            //_userAppService.DeleteAsync(id);
-            //if (!_notification.HasNotofications())
-            //{
-            //    return RedirectToAction("Index");
-            //}
-            //foreach (var item in _notification.GetDomainNotifications())
-            //{
-            //    ModelState.AddModelError(string.Empty, item.Value);
-            //}
-
-            var user = await _user.FindByIdAsync(id);
-            if (user!=null)
+            _userAppService.DeleteAsync(id);
+            if (!_notification.HasNotofications())
             {
-                var result = await _user.DeleteAsync(user);
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("Index");
-                }
-                ModelState.AddModelError(string.Empty, "删除用户出错");
+                return RedirectToAction("Index");
             }
+            foreach (var item in _notification.GetDomainNotifications())
+            {
+                ModelState.AddModelError(string.Empty, item.Value);
+            }
+
+          
             return RedirectToAction("Index");
         }
 
@@ -167,7 +143,7 @@ namespace Heavy.Controllers
         [HttpPost]
         public async Task<IActionResult> ManageClaims(ManageClaimsModel claimsModel)
         {
-            var user = await _user.FindByIdAsync(claimsModel.UserId);
+            var user = await _userAppService.GetById(claimsModel.UserId);
             if (user == null)
                 RedirectToAction("Index");
             var claim = new IdentityUserClaim<string>

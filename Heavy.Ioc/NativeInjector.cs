@@ -44,6 +44,7 @@ namespace Heavy.Ioc
 
             services.AddScoped<IRequestHandler<RegisterUserCommand, bool>, UserCommandHandler>();
             services.AddScoped<IRequestHandler<UpdateUserCommand, bool>, UserCommandHandler>();
+            services.AddScoped<IRequestHandler<DeleteUserCommand, bool>, UserCommandHandler>();
 
 
 
