@@ -25,7 +25,7 @@ namespace Heavy.Ioc
     {
         public static void RegisterService(IServiceCollection services)
         {
-            //services.AddScoped<UserRepository>();
+          
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddScoped<IEventStore, SqlEventStore>();
@@ -39,7 +39,7 @@ namespace Heavy.Ioc
             services.AddSingleton<IAuthorizationHandler, EmailHandler>();
             services.AddSingleton<IAuthorizationHandler, RoleHandler>();
             services.AddScoped<EventStoreContext>();
-            services.AddScoped<ApplicationDbContext>();
+           // services.AddScoped<ApplicationDbContext>();
 
 
             services.AddScoped<IRequestHandler<RegisterUserCommand, bool>, UserCommandHandler>();
