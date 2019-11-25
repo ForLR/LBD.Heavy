@@ -9,6 +9,7 @@ namespace Heavy.Identity.Model
 {
     public class User:IdentityUser
     {
+
         public User()
         {
 

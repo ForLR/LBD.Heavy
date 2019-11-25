@@ -17,6 +17,7 @@ using Heavy.Repositorys;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Heavy.Ioc
@@ -39,7 +40,7 @@ namespace Heavy.Ioc
             services.AddSingleton<IAuthorizationHandler, EmailHandler>();
             services.AddSingleton<IAuthorizationHandler, RoleHandler>();
             services.AddScoped<EventStoreContext>();
-           // services.AddScoped<ApplicationDbContext>();
+            services.AddDbContext<ApplicationDbContext>(option => option.UseMySQL("Server=47.101.221.220;port=3306;uid=lanbudai;pwd=123258lR.;Database=Heavy"));
 
 
             services.AddScoped<IRequestHandler<RegisterUserCommand, bool>, UserCommandHandler>();

@@ -14,8 +14,7 @@ namespace Heavy.Identity.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.1-rtm-30846")
-                .HasAnnotation("Relational:MaxIdentifierLength", 64);
+                .HasAnnotation("ProductVersion", "2.2.0-rtm-35687");
 
             modelBuilder.Entity("Heavy.Identity.Model.User", b =>
                 {
@@ -127,13 +126,9 @@ namespace Heavy.Identity.Migrations
                     b.Property<string>("UserId")
                         .IsRequired();
 
-                    b.Property<string>("UserId1");
-
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("UserId1");
 
                     b.ToTable("AspNetUserClaims");
                 });
@@ -149,13 +144,9 @@ namespace Heavy.Identity.Migrations
                     b.Property<string>("UserId")
                         .IsRequired();
 
-                    b.Property<string>("UserId1");
-
                     b.HasKey("LoginProvider", "ProviderKey");
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("UserId1");
 
                     b.ToTable("AspNetUserLogins");
                 });
@@ -166,13 +157,9 @@ namespace Heavy.Identity.Migrations
 
                     b.Property<string>("RoleId");
 
-                    b.Property<string>("UserId1");
-
                     b.HasKey("UserId", "RoleId");
 
                     b.HasIndex("RoleId");
-
-                    b.HasIndex("UserId1");
 
                     b.ToTable("AspNetUserRoles");
                 });
@@ -185,13 +172,9 @@ namespace Heavy.Identity.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("UserId1");
-
                     b.Property<string>("Value");
 
                     b.HasKey("UserId", "LoginProvider", "Name");
-
-                    b.HasIndex("UserId1");
 
                     b.ToTable("AspNetUserTokens");
                 });
@@ -207,25 +190,17 @@ namespace Heavy.Identity.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
                     b.HasOne("Heavy.Identity.Model.User")
-                        .WithMany()
+                        .WithMany("Claims")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Heavy.Identity.Model.User")
-                        .WithMany("Claims")
-                        .HasForeignKey("UserId1");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.HasOne("Heavy.Identity.Model.User")
-                        .WithMany()
+                        .WithMany("Logins")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Heavy.Identity.Model.User")
-                        .WithMany("Logins")
-                        .HasForeignKey("UserId1");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
@@ -236,25 +211,17 @@ namespace Heavy.Identity.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Heavy.Identity.Model.User")
-                        .WithMany()
+                        .WithMany("UserRoles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Heavy.Identity.Model.User")
-                        .WithMany("UserRoles")
-                        .HasForeignKey("UserId1");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
                     b.HasOne("Heavy.Identity.Model.User")
-                        .WithMany()
+                        .WithMany("Tokens")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Heavy.Identity.Model.User")
-                        .WithMany("Tokens")
-                        .HasForeignKey("UserId1");
                 });
 #pragma warning restore 612, 618
         }

@@ -38,7 +38,7 @@ namespace Heavy
             });
 
             //数据库
-            services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
 
             services.AddIdentity<User, IdentityRole>(option=> 

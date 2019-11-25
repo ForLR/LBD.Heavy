@@ -149,7 +149,8 @@ namespace Heavy.Controllers
             var claim = new IdentityUserClaim<string>
             {
                 ClaimType = claimsModel.ClaimId,
-                ClaimValue = claimsModel.ClaimId
+                ClaimValue = claimsModel.ClaimId,
+                UserId=user.Id
             };
             user.Claims.Add(claim);
             var result = await _user.UpdateAsync(user);

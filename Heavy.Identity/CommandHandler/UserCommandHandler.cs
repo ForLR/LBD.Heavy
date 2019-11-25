@@ -38,6 +38,7 @@ namespace Heavy.Identity.CommandHandler
                 Email = request.Email,
                 IDCard = request.IDCard,
                 Url = request.Url,
+               
             };
             if ( _user.FindByNameAsync(user.UserName).Result!=null)
             {
