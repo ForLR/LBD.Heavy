@@ -20,7 +20,7 @@ namespace Heavy.Data.Context
            // var connectionStr = configuration["ConnectionStrings"];
 
             var builder = new DbContextOptionsBuilder<EventStoreContext>();
-            builder.UseMySQL("Server=47.101.221.220;port=3306;uid=lanbudai;pwd=123258lR.;Database=Heavy");
+            builder.UseMySql("Server=47.101.221.220;port=3306;uid=lanbudai;pwd=123258lR.;Database=Heavy");
             return new EventStoreContext(builder.Options);
         }
     }

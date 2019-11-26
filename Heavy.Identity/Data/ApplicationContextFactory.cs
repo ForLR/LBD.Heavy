@@ -17,7 +17,7 @@ namespace Heavy.Data.Context
         
 
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            builder.UseMySQL("Server=47.101.221.220;port=3306;uid=lanbudai;pwd=123258lR.;Database=Heavy");
+            builder.UseMySql("Server=47.101.221.220;port=3306;uid=lanbudai;pwd=123258lR.;Database=Heavy");
             return new ApplicationDbContext(builder.Options);
         }
     }

@@ -40,7 +40,7 @@ namespace Heavy.Ioc
             services.AddSingleton<IAuthorizationHandler, EmailHandler>();
             services.AddSingleton<IAuthorizationHandler, RoleHandler>();
             services.AddScoped<EventStoreContext>();
-            services.AddDbContext<ApplicationDbContext>(option => option.UseMySQL("Server=47.101.221.220;port=3306;uid=lanbudai;pwd=123258lR.;Database=Heavy"));
+            services.AddDbContext<ApplicationDbContext>(option => option.UseMySql("Server=47.101.221.220;port=3306;uid=lanbudai;pwd=123258lR.;Database=Heavy"));
 
 
             services.AddScoped<IRequestHandler<RegisterUserCommand, bool>, UserCommandHandler>();
