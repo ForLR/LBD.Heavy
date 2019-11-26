@@ -120,7 +120,18 @@ namespace Heavy.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult AddClaims()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public async Task<IActionResult> AddClaims(string name)
+        {
+            await _claimTypeRepository.Add(new ClaimType {ApplicationType= ClaimTypeEnum.User,Name=name });
+            await _claimTypeRepository.SaveChanges();
+            return View(model:name);
+        }
         public async Task<IActionResult> ManageClaims(string id)
         {
             var claim = _claimTypeRepository.GetAlls(x=>x.ApplicationType== ClaimTypeEnum.User);

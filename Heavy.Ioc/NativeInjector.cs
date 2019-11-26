@@ -58,8 +58,6 @@ namespace Heavy.Ioc
             services.AddScoped<IUser, AspNetUser>();
 
 
-            // services.AddScoped<IRequestHandler<AddUserCommand, bool>, CustomerCommandHandler>();
-
         }
     }
 }
