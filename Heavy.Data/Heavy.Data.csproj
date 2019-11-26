@@ -15,10 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Heavy.Domain\Heavy.Domain.csproj" />
-  </ItemGroup> 
-
-  <ItemGroup>
-    <Folder Include="Migrations\EventStores\" />
   </ItemGroup>
 
 </Project>

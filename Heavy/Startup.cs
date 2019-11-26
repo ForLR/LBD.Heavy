@@ -73,6 +73,12 @@ namespace Heavy
                  new EmailRequirement("@qq.com")
                 // new QualifiedUserRequirement("lurui")
                 ));
+
+            option.AddPolicy("ReadAuth", policy => policy.AddRequirements
+            (
+                new ReadAuthRequirement()
+               // new QualifiedUserRequirement("lurui")
+               ));
             });
             #endregion
 

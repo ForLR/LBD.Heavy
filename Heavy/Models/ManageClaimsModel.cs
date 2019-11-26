@@ -13,5 +13,7 @@ namespace Heavy.Models
         [Required]
         public string ClaimId { get; set; }
         public List<string> AvailableClaims { get; set; }
+
+        public string ClaimValue { get; set; }
     }
 }

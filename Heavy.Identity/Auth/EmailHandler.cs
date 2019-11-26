@@ -13,6 +13,7 @@ namespace Heavy.Identity.Auth
             EmailRequirement requirement
             )
         {
+         
             var claim=context.User.Claims.FirstOrDefault(x=>x.Type=="Email");
             if (claim!=null)
             {

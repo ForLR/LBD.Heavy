@@ -21,6 +21,8 @@ using Heavy.Identity.Repositorys;
 namespace Heavy.Controllers
 {
     //[Authorize(Policy = "仅限lurui")]
+     [Authorize(Policy = "ReadAuth")]
+
     public class UserController : Controller
     {
         private readonly UserManager<User> _user;
@@ -126,23 +128,24 @@ namespace Heavy.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddClaims(string name)
+        public async Task<IActionResult> AddClaims(ClaimTypeViewModel claimType)
         {
-            await _claimTypeRepository.Add(new ClaimType {ApplicationType= ClaimTypeEnum.User,Name=name });
+
+            await _claimTypeRepository.Add(new ClaimType {ApplicationType= ClaimTypeEnum.User,Name= claimType.Name });
             await _claimTypeRepository.SaveChanges();
-            return View(model:name);
+            return View(model: claimType);
         }
         public async Task<IActionResult> ManageClaims(string id)
         {
             var claim = _claimTypeRepository.GetAlls(x=>x.ApplicationType== ClaimTypeEnum.User);
-
-            List<string> AllClaimTypeList = new List<string>
-            {
-                "Edit Albums",
-                "Edit Users",
-                "Edit Roles",
-                "Email"
-            };
+            List<string> AllClaimTypeList = claim.Select(x => x.Name).ToList();
+            //List<string> AllClaimTypeList = new List<string>
+            //{
+            //    "Edit Albums",
+            //    "Edit Users",
+            //    "Edit Roles",
+            //    "Email"
+            //};
             var user = await _user.Users.Include(x => x.Claims).FirstOrDefaultAsync(x=>x.Id==id);
             if (user == null)
                 return RedirectToAction("Index");
@@ -163,7 +166,7 @@ namespace Heavy.Controllers
             var claim = new IdentityUserClaim<string>
             {
                 ClaimType = claimsModel.ClaimId,
-                ClaimValue = claimsModel.ClaimId,
+                ClaimValue = claimsModel.ClaimValue,
                 UserId=user.Id
             };
             user.Claims.Add(claim);
@@ -179,7 +182,7 @@ namespace Heavy.Controllers
             var user = await _user.Users.Include(x => x.Claims).FirstOrDefaultAsync(x => x.Id == id);
             if (user == null)
                 return RedirectToAction("Index");
-            var claims = user.Claims.Where(x => x.ClaimType==claim).ToList();
+            var claims = user.Claims.Where(x => x.ClaimValue==claim).ToList();
             foreach (var item in claims)
             {
                 user.Claims.Remove(item);

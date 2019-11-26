@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Heavy.Data.Migrations.EventStore
+namespace Heavy.Data.Migrations.EventStores
 {
-    public partial class eventInit : Migration
+    public partial class _201911262017 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,7 +11,7 @@ namespace Heavy.Data.Migrations.EventStore
                 name: "StoredEvents",
                 columns: table => new
                 {
-                    Id = table.Column<byte[]>(nullable: false),
+                    Id = table.Column<Guid>(nullable: false),
                     Action = table.Column<string>(type: "varchar(100)", nullable: true),
                     AggregateId = table.Column<string>(nullable: true),
                     CreationDate = table.Column<DateTime>(nullable: false),
