@@ -13,6 +13,7 @@ using Heavy.Identity.CommandHandler;
 using Heavy.Identity.Commands;
 using Heavy.Identity.Data;
 using Heavy.Identity.Model;
+using Heavy.Identity.Repositorys;
 using Heavy.Repositorys;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -52,6 +53,8 @@ namespace Heavy.Ioc
             services.AddScoped<INotificationHandler<DomainNotificationEvent>, DomainNotificationEventHandler>();
 
             services.AddScoped<UserRepository>();
+            services.AddScoped<ClaimTypeRepository>();
+            
             services.AddScoped<IUser, AspNetUser>();
 
 

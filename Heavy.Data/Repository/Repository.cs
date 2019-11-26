@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,9 +32,15 @@ namespace Heavy.Data.Repository
             GC.SuppressFinalize(this);
         }
 
-        public Task<List<TEntity>> GetAll()
+
+        public IList<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            return db.ToList();
+        }
+
+        public IQueryable<TEntity> GetAlls(Expression<Func<TEntity, bool>> expression)
+        {
+            return db.Where(expression);
         }
 
         public Task<TEntity> GetById(Guid id)
@@ -54,7 +61,10 @@ namespace Heavy.Data.Repository
 
         public Task Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            _context.Entry(entity).State = EntityState.Modified;
+            return Task.CompletedTask;
         }
+
+    
     }
 }

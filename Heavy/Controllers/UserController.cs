@@ -16,6 +16,7 @@ using Heavy.Application.Interfaces;
 using Heavy.Application.ViewModels.Users;
 using MediatR;
 using Heavy.Domain.Core.Notifications;
+using Heavy.Identity.Repositorys;
 
 namespace Heavy.Controllers
 {
@@ -24,13 +25,14 @@ namespace Heavy.Controllers
     {
         private readonly UserManager<User> _user;
         private readonly DomainNotificationEventHandler _notification;
-
+        private readonly ClaimTypeRepository _claimTypeRepository;
         private readonly IUserAppService _userAppService;
-        public UserController(UserManager<User> user, IUserAppService userAppService, INotificationHandler<DomainNotificationEvent> notification)
+        public UserController(UserManager<User> user, IUserAppService userAppService, INotificationHandler<DomainNotificationEvent> notification, ClaimTypeRepository claimTypeRepository)
         {
             _user = user;
             this._userAppService= userAppService;
             this._notification = notification as DomainNotificationEventHandler;
+            this._claimTypeRepository = claimTypeRepository;
         }
         public async Task<IActionResult> Index()
         {
@@ -121,6 +123,7 @@ namespace Heavy.Controllers
 
         public async Task<IActionResult> ManageClaims(string id)
         {
+            var claim = _claimTypeRepository.GetAlls(x=>x.ApplicationType== ClaimTypeEnum.User);
 
             List<string> AllClaimTypeList = new List<string>
             {

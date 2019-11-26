@@ -10,6 +10,7 @@ namespace Heavy.Identity.Data
     public class ApplicationDbContext:IdentityDbContext<User>
     {
 
+        public DbSet<ClaimType> ClaimTypes { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
         {
 

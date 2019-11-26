@@ -56,7 +56,6 @@ namespace Heavy.Application.Services
         public async Task<User> GetById(string id)
         {
             var data = await _user.FindByIdAsync(id);
-            //var  result = _mapper.Map<UserViewModel>(data);
             return data;
         }
 
