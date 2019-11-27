@@ -1,4 +1,6 @@
-﻿using Heavy.Application.Interfaces;
+﻿using AutoMapper;
+using Heavy.Application.AutoMappers;
+using Heavy.Application.Interfaces;
 using Heavy.Application.Services;
 using Heavy.Data.Context;
 using Heavy.Data.EventSourcing;
@@ -18,6 +20,7 @@ using Heavy.Repositorys;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -27,7 +30,21 @@ namespace Heavy.Ioc
     {
         public static void RegisterService(IServiceCollection services)
         {
-          
+            //内存缓存
+            services.AddMemoryCache();
+
+            //AutoMapper
+            services.AddAutoMapper(typeof(AutoMappingConfig));
+
+            services.AddIdentity<User, IdentityRole>(option =>
+            {
+                option.Password.RequiredLength = 1;
+                option.Password.RequireNonAlphanumeric = false;
+                option.Password.RequireLowercase = false;
+                option.Password.RequireUppercase = false;
+                option.User.RequireUniqueEmail = true;
+            }).AddEntityFrameworkStores<ApplicationDbContext>();
+
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddScoped<IEventStore, SqlEventStore>();

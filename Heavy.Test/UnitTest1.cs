@@ -27,24 +27,15 @@ namespace Heavy.Test
         public void TestMethod1()
         {
             IServiceCollection services = new ServiceCollection();
-            services.AddMemoryCache();
-            services.AddAutoMapper(typeof(AutoMappingConfig));
-
-            services.AddIdentity<User, IdentityRole>(option =>
-            {
-                option.Password.RequiredLength = 1;
-                option.Password.RequireNonAlphanumeric = false;
-                option.Password.RequireLowercase = false;
-                option.Password.RequireUppercase = false;
-            }).AddEntityFrameworkStores<ApplicationDbContext>();
 
 
             NativeInjector.RegisterService(services);
-            //services.AddIdentityCore<User>();
             services.AddMediatR(typeof(UnitTest1));
+
             ServiceProvider serviceProvider = services.BuildServiceProvider();
-            //IUserAppService userApp = serviceProvider.GetService<IUserAppService>();
-            //var user=userApp.AllViewModel().Result;
+
+            IUserAppService userApp = serviceProvider.GetService<IUserAppService>();
+            var user = userApp.AllViewModel().Result;
 
             ClaimTypeRepository claimTypeRepository= serviceProvider.GetService<ClaimTypeRepository>();
             var claim = new ClaimType { ApplicationType = ClaimTypeEnum.User, Name = "Edit" };

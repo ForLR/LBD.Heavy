@@ -35,20 +35,9 @@ namespace Heavy
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
+           
             });
 
-            //数据库
-            //services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
-
-
-            services.AddIdentity<User, IdentityRole>(option=> 
-            {
-                option.Password.RequiredLength = 1;
-                option.Password.RequireNonAlphanumeric = false;
-                option.Password.RequireLowercase = false;
-                option.Password.RequireUppercase = false;
-            }).AddEntityFrameworkStores<ApplicationDbContext>();
-           
 
             #region 授权
             services.AddAuthorization(option =>
@@ -74,26 +63,15 @@ namespace Heavy
                 // new QualifiedUserRequirement("lurui")
                 ));
 
-            option.AddPolicy("ReadAuth", policy => policy.AddRequirements
-            (
-                new ReadAuthRequirement()
-               // new QualifiedUserRequirement("lurui")
-               ));
+            option.AddPolicy("ReadAuth", policy => policy.AddRequirements(new ReadAuthRequirement()));
+
             });
             #endregion
-
-            //内存缓存
-            services.AddMemoryCache();
-
-            //AutoMapper
-            services.AddAutoMapper(typeof(AutoMappingConfig));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             //MediatR
             services.AddMediatR(typeof(Startup));
-
-        
 
             // Inject 注入
             RegisterService(services);
