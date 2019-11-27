@@ -45,6 +45,13 @@ namespace Heavy.Ioc
                 option.User.RequireUniqueEmail = true;
             }).AddEntityFrameworkStores<ApplicationDbContext>();
 
+
+            services.ConfigureApplicationCookie(option=> 
+            {
+                option.SlidingExpiration = true;
+              
+            });
+
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddScoped<IEventStore, SqlEventStore>();
