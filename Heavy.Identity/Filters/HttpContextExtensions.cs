@@ -16,7 +16,7 @@ namespace Heavy.Identity.Filters
         {
             if (httpContext.User == null) return;
             var signInManage= httpContext.RequestServices.GetRequiredService<SignInManager<User>>();
-            if (!signInManage.IsSignedIn(httpContext.User))
+            if (signInManage.IsSignedIn(httpContext.User))
             {
                 var userManage = httpContext.RequestServices.GetRequiredService<UserManager<User>>();
                 var user = await userManage.GetUserAsync(httpContext.User);

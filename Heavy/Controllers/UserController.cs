@@ -22,25 +22,27 @@ using Heavy.Identity.Filters;
 namespace Heavy.Controllers
 {
     //[Authorize(Policy = "仅限lurui")]
-     [Authorize(Policy = "ReadAuth")]
-
+    //[Authorize(Policy = "ReadAuth")]
+    [RefreshLogin]
+    [Authorize(Policy = "仅限lurui")]
+   
     public class UserController : Controller
     {
         private readonly UserManager<User> _user;
         private readonly DomainNotificationEventHandler _notification;
         private readonly ClaimTypeRepository _claimTypeRepository;
         private readonly IUserAppService _userAppService;
-        private readonly SignInManager<User> _signIn;
 
 
-        public UserController(UserManager<User> user, IUserAppService userAppService, INotificationHandler<DomainNotificationEvent> notification, ClaimTypeRepository claimTypeRepository, SignInManager<User> signInManager)
+        public UserController(UserManager<User> user, IUserAppService userAppService, INotificationHandler<DomainNotificationEvent> notification, ClaimTypeRepository claimTypeRepository)
         {
             _user = user;
             this._userAppService= userAppService;
             this._notification = notification as DomainNotificationEventHandler;
             this._claimTypeRepository = claimTypeRepository;
-            this._signIn = signInManager;
         }
+
+      
         public async Task<IActionResult> Index()
         {
 

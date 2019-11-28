@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Heavy.Models;
 using Heavy.Identity.Model;
+using Heavy.Identity.Filters;
 
 namespace Heavy.Controllers
 {
+    [RefreshLogin]
     [Authorize]
     public class RoleController : Controller
     {
@@ -38,7 +40,8 @@ namespace Heavy.Controllers
                 return View(addModel);
             var role = new IdentityRole
             {
-                Name=addModel.RoleName
+                Name=addModel.RoleName,
+               
             };
             var result = await _roleManager.CreateAsync(role);
             if (result.Succeeded)
@@ -131,6 +134,7 @@ namespace Heavy.Controllers
             return View(vm);
         }
         [HttpPost]
+       
         public async Task<IActionResult> AddUserToRole(RoleUserViewModel roleUserView)
         {
             var role = await _roleManager.FindByIdAsync(roleUserView.RoleId);
