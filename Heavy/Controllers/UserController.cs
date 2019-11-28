@@ -17,6 +17,7 @@ using Heavy.Application.ViewModels.Users;
 using MediatR;
 using Heavy.Domain.Core.Notifications;
 using Heavy.Identity.Repositorys;
+using Heavy.Identity.Filters;
 
 namespace Heavy.Controllers
 {
@@ -29,12 +30,16 @@ namespace Heavy.Controllers
         private readonly DomainNotificationEventHandler _notification;
         private readonly ClaimTypeRepository _claimTypeRepository;
         private readonly IUserAppService _userAppService;
-        public UserController(UserManager<User> user, IUserAppService userAppService, INotificationHandler<DomainNotificationEvent> notification, ClaimTypeRepository claimTypeRepository)
+        private readonly SignInManager<User> _signIn;
+
+
+        public UserController(UserManager<User> user, IUserAppService userAppService, INotificationHandler<DomainNotificationEvent> notification, ClaimTypeRepository claimTypeRepository, SignInManager<User> signInManager)
         {
             _user = user;
             this._userAppService= userAppService;
             this._notification = notification as DomainNotificationEventHandler;
             this._claimTypeRepository = claimTypeRepository;
+            this._signIn = signInManager;
         }
         public async Task<IActionResult> Index()
         {
@@ -158,6 +163,7 @@ namespace Heavy.Controllers
             return View(vm);
         }
         [HttpPost]
+        [RefreshLogin]
         public async Task<IActionResult> ManageClaims(ManageClaimsModel claimsModel)
         {
             var user = await _userAppService.GetById(claimsModel.UserId);
@@ -174,9 +180,12 @@ namespace Heavy.Controllers
             if (result.Succeeded)
                 return RedirectToAction("Edit", new { user.Id});
             ModelState.AddModelError(string.Empty, "编辑用户Claims出错");
+            
             return View(user);
         }
         [HttpPost]
+        [RefreshLogin]
+
         public async Task<IActionResult> RemoveClaim(string id,string claim)
         {
             var user = await _user.Users.Include(x => x.Claims).FirstOrDefaultAsync(x => x.Id == id);
