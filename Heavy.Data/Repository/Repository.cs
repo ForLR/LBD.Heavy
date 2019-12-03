@@ -23,7 +23,7 @@ namespace Heavy.Data.Repository
 
         public Task Add(TEntity entity)
         {
-            return db.AddAsync(entity);
+            return db.AddAsync(entity).AsTask();
         }
 
         public void Dispose()
@@ -45,7 +45,7 @@ namespace Heavy.Data.Repository
 
         public Task<TEntity> GetById(Guid id)
         {
-            return db.FindAsync(id);
+            return db.FindAsync(id).AsTask();
         }
 
         public Task Remove(Guid id)
