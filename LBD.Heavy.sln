@@ -17,9 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heavy.Application", "Heavy.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heavy.Ioc", "Heavy.Ioc\Heavy.Ioc.csproj", "{996A2E01-418C-49B0-9EF9-4F8B3056C599}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBD.Infrastructure", "LBD.Infrastructure\LBD.Infrastructure.csproj", "{C2ACFBF0-B7EF-4DB3-BC84-63B09895DFC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBD.Infrastructure", "LBD.Infrastructure\LBD.Infrastructure.csproj", "{C2ACFBF0-B7EF-4DB3-BC84-63B09895DFC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heavy.Test", "Heavy.Test\Heavy.Test.csproj", "{2F961A86-3613-48ED-B566-DEE0E38B90C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heavy.Test", "Heavy.Test\Heavy.Test.csproj", "{2F961A86-3613-48ED-B566-DEE0E38B90C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
