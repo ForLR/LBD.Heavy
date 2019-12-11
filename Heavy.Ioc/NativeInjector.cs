@@ -32,7 +32,15 @@ namespace Heavy.Ioc
         {
             //内存缓存
             services.AddMemoryCache();
-
+            //分布式缓存 redis 
+            services.AddDistributedMemoryCache();
+           
+            services.AddStackExchangeRedisCache(option =>
+            {
+                option.InstanceName = "LBD";
+                option.Configuration = "47.101.221.220:6379,password=123258lR.";
+              
+            });
             //AutoMapper
             services.AddAutoMapper(typeof(AutoMappingConfig));
 
@@ -48,7 +56,8 @@ namespace Heavy.Ioc
 
             services.ConfigureApplicationCookie(option=> 
             {
-                option.SlidingExpiration = true;
+                //如果缓存时间段内有使用 则缓存的保存时间则再次滑动
+                option.SlidingExpiration = false;
               
             });
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Heavy.Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Heavy.Controllers
@@ -14,7 +15,7 @@ namespace Heavy.Controllers
         public IActionResult Index()
         {
 
-            return View();
+            return View(new List< CloundMusicViewModel>());
         }
     }
 }

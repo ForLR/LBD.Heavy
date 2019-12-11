@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StackExchange.Redis;
+using System;
 
 namespace LBD.Infrastructure
 {
@@ -6,7 +7,10 @@ namespace LBD.Infrastructure
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            var data = RedisHelper.GetInstance().StringGet("RedisTest");
+            RedisHelper.GetInstance().StringSet("RedisTest",DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            Console.ReadKey();
         }
     }
 }
