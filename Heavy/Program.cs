@@ -35,6 +35,7 @@ namespace Heavy
                 try
                 {
                     var context = services.GetRequiredService<ApplicationDbContext>();
+
                  
                 }
                 catch (Exception e)
