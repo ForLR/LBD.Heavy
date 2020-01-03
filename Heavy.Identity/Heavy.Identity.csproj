@@ -44,6 +44,7 @@
     <ProjectReference Include="..\Heavy.Data\Heavy.Data.csproj" />
     <ProjectReference Include="..\Heavy.Domain.Core\Heavy.Domain.Core.csproj" />
     <ProjectReference Include="..\Heavy.Domain\Heavy.Domain.csproj" />
+    <ProjectReference Include="..\LBD.Infrastructure\LBD.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

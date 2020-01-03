@@ -1,5 +1,6 @@
 ﻿using Heavy.Data.Mappings;
 using Heavy.Domain.Core.Events;
+using LBD.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -31,7 +32,7 @@ namespace Heavy.Data.Context
             //var connectionStr = configution["ConnectionStrings"];
             //optionsBuilder.UseMySql(connectionStr);
 
-            optionsBuilder.UseMySql("Server=47.101.221.220;port=3306;uid=lanbudai;pwd=123258lR.;Database=Heavy");
+            optionsBuilder.UseMySql(ConfigMange.ConfigStr);
            base.OnConfiguring(optionsBuilder);
         }
     }

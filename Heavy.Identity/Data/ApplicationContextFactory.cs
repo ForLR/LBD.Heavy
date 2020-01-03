@@ -1,4 +1,5 @@
 ﻿using Heavy.Identity.Data;
+using LBD.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
@@ -17,7 +18,7 @@ namespace Heavy.Data.Context
         
 
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            builder.UseMySql("Server=47.101.221.220;port=3306;uid=lanbudai;pwd=123258lR.;Database=Heavy");
+            builder.UseMySql(ConfigMange.ConfigStr);
             return new ApplicationDbContext(builder.Options);
         }
     }

@@ -12,12 +12,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.0" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.0.0" />
   </ItemGroup> 
 
   <ItemGroup>
     <ProjectReference Include="..\Heavy.Domain\Heavy.Domain.csproj" />
+    <ProjectReference Include="..\LBD.Infrastructure\LBD.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
