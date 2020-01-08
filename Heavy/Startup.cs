@@ -38,7 +38,6 @@ namespace Heavy
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
-              
 
 
             });
@@ -79,7 +78,7 @@ namespace Heavy
             services.AddMediatR(typeof(Startup));
             //services.AddControllers().AddNewtonsoftJson();
             // Inject 注入
-            RegisterService(services);
+            RegisterService(services, Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -128,9 +127,9 @@ namespace Heavy
             });
         }
 
-        public static void RegisterService(IServiceCollection services)
+        public static void RegisterService(IServiceCollection services, IConfiguration configuration)
         {
-            NativeInjector.RegisterService(services);
+            NativeInjector.RegisterService(services, configuration);
 
         }
     }

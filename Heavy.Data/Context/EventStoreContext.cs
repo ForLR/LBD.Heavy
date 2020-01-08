@@ -32,8 +32,8 @@ namespace Heavy.Data.Context
             //var connectionStr = configution["ConnectionStrings"];
             //optionsBuilder.UseMySql(connectionStr);
 
-            optionsBuilder.UseMySql(ConfigMange.ConfigStr);
-           base.OnConfiguring(optionsBuilder);
+           // optionsBuilder.UseMySql(ConfigMange.ConfigStr);
+          // base.OnConfiguring(optionsBuilder);
         }
     }
 }

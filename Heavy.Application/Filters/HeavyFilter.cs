@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Heavy.Application.Filters
 {
-    public class HeavyFilter : Attribute, IActionFilter, IOrderedFilter
+    public class HeavyFilter :ActionFilterAttribute
     {
         public int Order { get;}
 
-        public void OnActionExecuted(ActionExecutedContext context)
+        public override void OnActionExecuted(ActionExecutedContext context)
         {
             Console.WriteLine("before");
         }
 
-        public void OnActionExecuting(ActionExecutingContext context)
+        public override void OnActionExecuting(ActionExecutingContext context)
         {
             Console.WriteLine("after");
         }

@@ -12,6 +12,11 @@ namespace Heavy.Data.Context
 
     public class AlbumContextFactory : IDesignTimeDbContextFactory<HeavyContext>
     {
+        private IConfiguration configuration;
+        public AlbumContextFactory(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
         public HeavyContext CreateDbContext(string[] args)
         {
            // IConfigurationRoot configuration = new ConfigurationBuilder()
@@ -21,7 +26,7 @@ namespace Heavy.Data.Context
            // var connectionStr = configuration["ConnectionStrings"];
 
             var builder = new DbContextOptionsBuilder<HeavyContext>();
-            builder.UseMySql(ConfigMange.ConfigStr);
+            builder.UseMySql(configuration.GetConnectionString("DefaultConnection"));
             return new HeavyContext(builder.Options);
         }
     }

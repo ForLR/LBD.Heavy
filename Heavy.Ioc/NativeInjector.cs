@@ -22,13 +22,14 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Heavy.Ioc
 {
     public class NativeInjector
     {
-        public static void RegisterService(IServiceCollection services)
+        public static void RegisterService(IServiceCollection services, IConfiguration configuration)
         {
             //内存缓存
             services.AddMemoryCache();
@@ -37,9 +38,8 @@ namespace Heavy.Ioc
            
             services.AddStackExchangeRedisCache(option =>
             {
-                option.InstanceName = "LBD";
-                option.Configuration = "47.101.221.220:6379,password=123258lR.";
-              
+                option.InstanceName = configuration.GetSection("Redis")["InstanceName"];
+                option.Configuration = configuration.GetSection("Redis")["Connect"];
             });
             //AutoMapper
             services.AddAutoMapper(typeof(AutoMappingConfig));
@@ -75,7 +75,8 @@ namespace Heavy.Ioc
             services.AddSingleton<IAuthorizationHandler, RoleHandler>();
             services.AddSingleton<IAuthorizationHandler, ReadHandler>();
             services.AddScoped<EventStoreContext>();
-            services.AddDbContext<ApplicationDbContext>(option => option.UseMySql("Server=47.101.221.220;port=3306;uid=lanbudai;pwd=123258lR.;Database=Heavy"));
+            
+            services.AddDbContext<ApplicationDbContext>(option => option.UseMySql(configuration.GetConnectionString("DefaultConnection")));
 
 
             services.AddScoped<IRequestHandler<RegisterUserCommand, bool>, UserCommandHandler>();

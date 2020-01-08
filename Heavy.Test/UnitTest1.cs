@@ -26,23 +26,23 @@ namespace Heavy.Test
         [TestMethod]
         public void TestMethod1()
         {
-            IServiceCollection services = new ServiceCollection();
+            //IServiceCollection services = new ServiceCollection();
 
 
-            NativeInjector.RegisterService(services);
-            services.AddMediatR(typeof(UnitTest1));
+            //NativeInjector.RegisterService(services);
+            //services.AddMediatR(typeof(UnitTest1));
 
-            ServiceProvider serviceProvider = services.BuildServiceProvider();
+            //ServiceProvider serviceProvider = services.BuildServiceProvider();
 
-            IUserAppService userApp = serviceProvider.GetService<IUserAppService>();
-            var user = userApp.AllViewModel().Result;
+            //IUserAppService userApp = serviceProvider.GetService<IUserAppService>();
+            //var user = userApp.AllViewModel().Result;
 
-            ClaimTypeRepository claimTypeRepository= serviceProvider.GetService<ClaimTypeRepository>();
-            var claim = new ClaimType { ApplicationType = ClaimTypeEnum.User, Name = "Edit" };
-            claimTypeRepository.Add(claim);
-            var result=claimTypeRepository.SaveChanges().Result;
-            var claims = claimTypeRepository.GetById(claim.Id);
-            var data = HttpHelper.Get("http://47.101.221.220:3000/top/list?idx=1");
+            //ClaimTypeRepository claimTypeRepository= serviceProvider.GetService<ClaimTypeRepository>();
+            //var claim = new ClaimType { ApplicationType = ClaimTypeEnum.User, Name = "Edit" };
+            //claimTypeRepository.Add(claim);
+            //var result=claimTypeRepository.SaveChanges().Result;
+            //var claims = claimTypeRepository.GetById(claim.Id);
+            //var data = HttpHelper.Get("http://47.101.221.220:3000/top/list?idx=1");
             Assert.Equals(3,4);
         }
     } 

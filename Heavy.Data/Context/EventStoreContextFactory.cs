@@ -11,6 +11,12 @@ namespace Heavy.Data.Context
 
     public class EventStoreContextFactory : IDesignTimeDbContextFactory<EventStoreContext>
     {
+        private IConfiguration configuration;
+        public EventStoreContextFactory(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        
+        }
         public EventStoreContext CreateDbContext(string[] args)
         {
            // IConfigurationRoot configuration = new ConfigurationBuilder()
@@ -20,7 +26,7 @@ namespace Heavy.Data.Context
            // var connectionStr = configuration["ConnectionStrings"];
 
             var builder = new DbContextOptionsBuilder<EventStoreContext>();
-            builder.UseMySql("Server=47.101.221.220;port=3306;uid=lanbudai;pwd=123258lR.;Database=Heavy");
+            builder.UseMySql(configuration.GetConnectionString("DefaultConnection"));
             return new EventStoreContext(builder.Options);
         }
     }

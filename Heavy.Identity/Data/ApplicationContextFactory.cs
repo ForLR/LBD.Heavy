@@ -13,12 +13,17 @@ namespace Heavy.Data.Context
 
     public class ApplicationContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>
     {
+        private IConfiguration configuration;
+        public ApplicationContextFactory(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
         public ApplicationDbContext CreateDbContext(string[] args)
         {
         
 
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            builder.UseMySql(ConfigMange.ConfigStr);
+            builder.UseMySql(configuration.GetConnectionString("DefaultConnection"));
             return new ApplicationDbContext(builder.Options);
         }
     }
