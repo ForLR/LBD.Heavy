@@ -74,7 +74,7 @@ namespace Heavy.Ioc
             services.AddSingleton<IAuthorizationHandler, EmailHandler>();
             services.AddSingleton<IAuthorizationHandler, RoleHandler>();
             services.AddSingleton<IAuthorizationHandler, ReadHandler>();
-            services.AddScoped<EventStoreContext>();
+            services.AddDbContext<EventStoreContext>(option => option.UseMySql(configuration.GetConnectionString("DefaultConnection")));
             
             services.AddDbContext<ApplicationDbContext>(option => option.UseMySql(configuration.GetConnectionString("DefaultConnection")));
 

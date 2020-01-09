@@ -11,6 +11,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Heavy.Models;
 using Heavy.Identity.Model;
+using LBD.Infrastructure;
+using System.IO;
+using System.Drawing.Imaging;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace Heavy.Controllers
 {
@@ -18,10 +22,21 @@ namespace Heavy.Controllers
     {
 
         private readonly SignInManager<User> _signIn;
+        private readonly IDistributedCache _cache;
 
-        public AccountController(SignInManager<User> signIn)
+        public AccountController(SignInManager<User> signIn, IDistributedCache cache)
         {
             _signIn = signIn;
+            this._cache = cache;
+        }
+
+        public IActionResult VerityCode()
+        {
+            var bitmp = VerifyCodeHelper.CreateVerifyCode(out string code);
+            _cache.SetString(HttpContext.Request.Host.Host, code, new DistributedCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromSeconds(60)));
+            MemoryStream memoryStream = new MemoryStream();
+            bitmp.Save(memoryStream, ImageFormat.Gif);
+            return File(memoryStream.ToArray(),"image/gif");
 
         }
         public IActionResult Login()
@@ -31,6 +46,11 @@ namespace Heavy.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(UserLoginModel userLogin)
         {
+            if (!_cache.GetString(HttpContext.Request.Host.Host).Equals(userLogin.VerrityCode))
+            {
+                ModelState.AddModelError(string.Empty, "验证码错误");
+                return View(userLogin);
+            }
             var result = await _signIn.PasswordSignInAsync(userLogin.UserName, userLogin.Password, true, false);
             if (result.Succeeded)
                 return RedirectToAction("Index", "Home");

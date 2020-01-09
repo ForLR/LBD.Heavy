@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -35,6 +36,22 @@ namespace Heavy
             var color = Console.BackgroundColor;
             Console.ForegroundColor = _config.Color;
             Console.WriteLine($"{logLevel.ToString()} - {_name} - {formatter(state, exception)}");
+
+
+           Debug.WriteLine($"************************************************************");
+
+
+            Debug.WriteLine($"CustomEFLogger {_name} {logLevel} {eventId} {state} start");
+
+            Debug.WriteLine($"异常信息：{exception?.Message}");
+
+            Debug.WriteLine($"信息：{formatter.Invoke(state, exception)}");
+
+            Debug.WriteLine($"CustomEFLogger {_name} {logLevel} {eventId} {state} end");
+
+            Debug.WriteLine($"************************************************************");
+
+           
             Console.ForegroundColor = color;
         }
     }

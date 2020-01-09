@@ -21,8 +21,20 @@
                 </div>
 
                 <div class="form-group">
+                    <label asp-for="VerrityCode"></label>
+                    <input asp-for="VerrityCode"  class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <img alt="验证码图片" class="img" onclick="refresh(this)" src="/Account/VerityCode" title="点击刷新">
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <button type="submit" class="btn btn-default">Log in</button>
                 </div>
+
 
                 <div class="invalid" asp-validation-summary="ModelOnly">
                 </div>
@@ -30,3 +42,8 @@
         </section>
     </div>
 </div>
+<script>
+      function refresh(obj) {
+        $(obj).attr("src", "/Account/VerityCode?random=" + Math.random());
+    }
+</script>

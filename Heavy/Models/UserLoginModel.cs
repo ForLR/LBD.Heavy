@@ -19,5 +19,7 @@ namespace Heavy.Models
         public string Password { get; set; }
 
         public bool Rememberme { get; set; }
+
+        public string VerrityCode { get; set; }
     }
 }
