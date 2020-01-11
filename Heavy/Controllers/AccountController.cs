@@ -46,10 +46,11 @@ namespace Heavy.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(UserLoginModel userLogin)
         {
-            if (!_cache.GetString(HttpContext.Request.Host.Host).Equals(userLogin.VerrityCode))
+
+            if (!(userLogin.VerrityCode).Equals(_cache.GetString(HttpContext.Request.Host.Host)))
             {
                 ModelState.AddModelError(string.Empty, "验证码错误");
-                return View(userLogin);
+                return View(userLogin); 
             }
             var result = await _signIn.PasswordSignInAsync(userLogin.UserName, userLogin.Password, true, false);
             if (result.Succeeded)

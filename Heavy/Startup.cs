@@ -15,12 +15,15 @@ namespace Heavy
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration,ILoggerFactory loggerFactory)
         {
             Configuration = configuration;
+            LoggerFactory = loggerFactory;
         }
 
         public IConfiguration Configuration { get; }
+
+        public ILoggerFactory LoggerFactory { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -29,8 +32,7 @@ namespace Heavy
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-
+                options.MinimumSameSitePolicy = SameSiteMode.Strict;
 
             });
 
@@ -100,19 +102,19 @@ namespace Heavy
                 Color = System.ConsoleColor.Yellow
             }));
 
+           
+
             // app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+            //app.UseCookiePolicy();
+         
 
 
             app.UseRouting();
             app.UseAuthentication();
-
             app.UseAuthorization();
             app.UseEndpoints(routes =>
             {
-             
-
                 routes.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

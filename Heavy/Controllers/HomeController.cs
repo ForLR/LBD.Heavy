@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Heavy.Models;
 using Heavy.Application.Filters;
+using Microsoft.AspNetCore.Http;
 
 namespace Heavy.Controllers
 {
@@ -21,12 +22,14 @@ namespace Heavy.Controllers
         [HeavyFilter]
         public IActionResult Index()
         {
-            _logger.LogInformation("logger");
+
+            
             return View();
         }
 
         public IActionResult About()
         {
+
             ViewData["Message"] = "Your application description page.";
             return View();
         }

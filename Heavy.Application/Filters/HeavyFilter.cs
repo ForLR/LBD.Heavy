@@ -8,7 +8,6 @@ namespace Heavy.Application.Filters
 {
     public class HeavyFilter :ActionFilterAttribute
     {
-        public int Order { get;}
 
         public override void OnActionExecuted(ActionExecutedContext context)
         {

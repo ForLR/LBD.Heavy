@@ -23,6 +23,7 @@ namespace Heavy
                 .MinimumLevel.Debug()//等级
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Information)///日志输出的最小级别
                 .Enrich.FromLogContext()
+                .WriteTo.Console()
                 .WriteTo.File(Path.Combine("logs/LogDatas","log.txt") , rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
@@ -34,6 +35,7 @@ namespace Heavy
                 var services = scope.ServiceProvider;
                 try
                 {
+                    
                     var context = services.GetRequiredService<ApplicationDbContext>();
 
                  
@@ -50,11 +52,11 @@ namespace Heavy
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args).UseUrls("http://*:88")
-            //.ConfigureLogging((hostingContext,logging)=> 
-            //{
-            //    logging.AddEventSourceLogger();
-            //    logging.AddConsole();
-            //})
+            .ConfigureLogging((hostingContext, logging) =>
+            {
+                //logging.AddEventSourceLogger();
+                logging.AddConsole();
+            })
                 .UseSerilog()
                 .UseStartup<Startup>();
     }

@@ -38,18 +38,18 @@ namespace Heavy
             Console.WriteLine($"{logLevel.ToString()} - {_name} - {formatter(state, exception)}");
 
 
-           Debug.WriteLine($"************************************************************");
+            Console.WriteLine($"Start************************************************************");
 
 
             Debug.WriteLine($"CustomEFLogger {_name} {logLevel} {eventId} {state} start");
 
             Debug.WriteLine($"异常信息：{exception?.Message}");
 
-            Debug.WriteLine($"信息：{formatter.Invoke(state, exception)}");
+            Console.WriteLine($"信息：{formatter.Invoke(state, exception)}");
 
-            Debug.WriteLine($"CustomEFLogger {_name} {logLevel} {eventId} {state} end");
+            Console.WriteLine($"CustomEFLogger {_name} {logLevel} {eventId} {state} end");
 
-            Debug.WriteLine($"************************************************************");
+            Console.WriteLine($"************************************************************End");
 
            
             Console.ForegroundColor = color;
