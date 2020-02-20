@@ -10,20 +10,23 @@ using Heavy.Ioc;
 using MediatR;
 using Microsoft.Extensions.Hosting;
 using FluentValidation.AspNetCore;
+using Autofac;
+using Serilog;
+using System.Reflection;
 
 namespace Heavy
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration,ILoggerFactory loggerFactory)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            LoggerFactory = loggerFactory;
+           // LoggerFactory = loggerFactory;
         }
 
         public IConfiguration Configuration { get; }
 
-        public ILoggerFactory LoggerFactory { get; }
+        //public ILoggerFactory LoggerFactory { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -72,9 +75,16 @@ namespace Heavy
             services.AddMediatR(typeof(Startup));
             //services.AddControllers().AddNewtonsoftJson();
             // Inject 注入
-            RegisterService(services, Configuration);
+            //services.RegisterService(Configuration);
+            services.RegisterSynthesize(Configuration);
         }
 
+
+        public void ConfigureContainer(ContainerBuilder containerBuilder)
+        {
+            NativeInjector.RegisterServiceForAutofac(containerBuilder, this.GetType().GetTypeInfo().Assembly);
+
+        }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,ILoggerFactory loggerFactory)
         {
@@ -89,7 +99,8 @@ namespace Heavy
                 app.UseExceptionHandler("/Home/Error");
                 // app.UseHsts();
             }
-           
+            app.UseSerilogRequestLogging();
+
             //自定义日志配置
             loggerFactory.AddProvider(new ColoredConsoleLoggerProvider(new ColoredConsoleLoggerConfiguration()
             {
@@ -124,7 +135,7 @@ namespace Heavy
 
         public static void RegisterService(IServiceCollection services, IConfiguration configuration)
         {
-            NativeInjector.RegisterService(services, configuration);
+           
 
         }
     }
