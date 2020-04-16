@@ -53,18 +53,21 @@ namespace Heavy
         //Microsoft.Extensions.Hosting.IHostBuilder.
 
         /// <summary>
-        /// 泛型，通用主机  
+        /// 泛型，通用主机    完成配置--完成Kestrel
         /// https://docs.microsoft.com/zh-cn/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-3.1
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-          .ConfigureWebHostDefaults(webBuilder =>
+        Host.CreateDefaultBuilder(args)//完成基础配置
+          .ConfigureWebHostDefaults(webBuilder => //自定义主机配置
           {
              
               webBuilder.UseUrls("http://*:88").UseStartup<Startup>();
-          }).UseSerilog().UseServiceProviderFactory(new AutofacServiceProviderFactory());
+             
+          })
+            .UseSerilog()
+            .UseServiceProviderFactory(new AutofacServiceProviderFactory());//设置工厂来替换实例  替换core默认主机
 
 
         /// <summary>

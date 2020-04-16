@@ -41,18 +41,18 @@ namespace Heavy.Ioc
         public static void RegisterSynthesize(this IServiceCollection services, IConfiguration configuration)
         {
             //内存缓存
-            services.AddMemoryCache();
+            //services.AddMemoryCache();
             //分布式缓存 redis 
-            services.AddDistributedMemoryCache();
-
-            services.AddStackExchangeRedisCache(option =>
+            services.AddDistributedRedisCache(options=> 
             {
-                option.InstanceName = configuration.GetSection("Redis")["InstanceName"];
-                option.Configuration = configuration.GetSection("Redis")["Connect"];
+                options.Configuration = configuration.GetSection("Redis")["Connect"];
+                options.InstanceName = configuration.GetSection("Redis")["InstanceName"];
             });
+
             //AutoMapper
             services.AddAutoMapper(typeof(AutoMappingConfig));
 
+           
             services.AddIdentity<User, IdentityRole>(option =>
             {
                 option.Password.RequiredLength = 1;
@@ -75,7 +75,6 @@ namespace Heavy.Ioc
             services.AddDbContext<EventStoreContext>(option => option.UseMySql(conn));
 
             services.AddDbContext<ApplicationDbContext>(option => option.UseMySql(conn));
-            //services.RegisterService(configuration);
         }
         /// <summary>
         /// 默认ioc容器
@@ -167,5 +166,8 @@ namespace Heavy.Ioc
             //containerBuilder
 
         }
+
+
+
     }
 }
