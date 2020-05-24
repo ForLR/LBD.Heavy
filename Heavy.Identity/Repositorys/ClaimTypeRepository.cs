@@ -1,4 +1,5 @@
 ﻿using Heavy.Data.Repository;
+using Heavy.Data.Repositorys;
 using Heavy.Identity.Data;
 using Heavy.Identity.Model;
 using System;
@@ -9,9 +10,11 @@ namespace Heavy.Identity.Repositorys
 {
     public class ClaimTypeRepository: Repository<ApplicationDbContext, ClaimType>
     {
-        public ClaimTypeRepository(ApplicationDbContext context) : base(context)
+        public ClaimTypeRepository(IDbContextFactory dbContextFactory) : base(dbContextFactory)
         {
 
         }
+
+      
     }
 }

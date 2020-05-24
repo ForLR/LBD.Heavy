@@ -1,19 +1,38 @@
-﻿using Heavy.Identity.Model;
+﻿using Heavy.Data.Repositorys;
+using Heavy.Identity.Model;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Heavy.Identity.Data
 {
-    public class ApplicationDbContext:IdentityDbContext<User>
+    public class ApplicationDbContext : IdentityDbContext<User>, IWriteOrRead
     {
 
         public DbSet<ClaimType> ClaimTypes { get; set; }
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
-        {
 
+        public DbSet<User> Userss { get; set; }
+        public IConfiguration configuration;
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IOptionsMonitor<DBConnectionOption> optionsMonitor) : base(options)
+        {
+            this.Conn = optionsMonitor.CurrentValue.WriteConnection;
+        }
+        private string Conn = string.Empty;
+
+
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            //if (optionsBuilder.IsConfigured)
+            //{
+            //    optionsBuilder.UseMySql(Conn);
+            //}
+            optionsBuilder.UseMySql(Conn);
+            base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -49,5 +68,10 @@ namespace Heavy.Identity.Data
             });
         }
 
+        public DbContext GetDbContext(string conn)
+        {
+            this.Conn = conn;
+            return this;
+        }
     }
 }

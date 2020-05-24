@@ -21,8 +21,11 @@
   </ItemGroup> 
 
   <ItemGroup>
+    <ProjectReference Include="..\Heavy.Data.Repositorys\Heavy.Data.Repositorys.csproj" />
     <ProjectReference Include="..\Heavy.Domain\Heavy.Domain.csproj" />
     <ProjectReference Include="..\LBD.Infrastructure\LBD.Infrastructure.csproj" />
-  </ItemGroup>
+  </ItemGroup> 
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

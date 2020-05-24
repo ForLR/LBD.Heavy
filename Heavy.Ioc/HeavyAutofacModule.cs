@@ -3,6 +3,7 @@ using Heavy.Application.Interfaces;
 using Heavy.Application.Services;
 using Heavy.Data.EventSourcing;
 using Heavy.Data.Repository.EvenSourcing;
+using Heavy.Data.Repositorys;
 using Heavy.Domain.Core.Bus;
 using Heavy.Domain.Core.Events;
 using Heavy.Domain.Core.Notifications;
@@ -58,6 +59,8 @@ namespace Heavy.Ioc
 
             containerBuilder.RegisterType<ClaimTypeRepository>().InstancePerLifetimeScope();
             containerBuilder.RegisterType<AspNetUser>().As<IUser>().InstancePerLifetimeScope();
+
+      
 
         }
     }

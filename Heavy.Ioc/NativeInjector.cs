@@ -7,6 +7,7 @@ using Heavy.Data.Context;
 using Heavy.Data.EventSourcing;
 using Heavy.Data.Repository;
 using Heavy.Data.Repository.EvenSourcing;
+using Heavy.Data.Repositorys;
 using Heavy.Domain.Core.Bus;
 using Heavy.Domain.Core.Events;
 using Heavy.Domain.Core.Notifications;
@@ -71,10 +72,19 @@ namespace Heavy.Ioc
             });
             var conn = configuration.GetConnectionString("DefaultConnection");
 
+            services.Configure<DBConnectionOption>(configuration.GetSection("ConnectionStrings"));
 
-            services.AddDbContext<EventStoreContext>(option => option.UseMySql(conn));
+            services.AddDbContext<EventStoreContext>(option => option.UseMySql("Server=47.101.221.220;port=3306;uid=lbd;pwd=123258lR.;Database=Heavy"));
 
-            services.AddDbContext<ApplicationDbContext>(option => option.UseMySql(conn));
+            services.AddDbContext<ApplicationDbContext>();
+
+            services.AddScoped<DbContext, ApplicationDbContext>();
+           // services.AddScoped<DbContext, EventStoreContext>();
+
+            services.AddScoped<IDbContextFactory, DbContextFactory>();
+
+
+
         }
         /// <summary>
         /// 默认ioc容器
@@ -105,6 +115,8 @@ namespace Heavy.Ioc
             services.AddScoped<IRequestHandler<DeleteUserCommand, bool>, UserCommandHandler>();
 
             services.AddScoped<INotificationHandler<DomainNotificationEvent>, DomainNotificationEventHandler>();
+
+           
 
             services.AddScoped<UserRepository>();
             services.AddScoped<ClaimTypeRepository>();
